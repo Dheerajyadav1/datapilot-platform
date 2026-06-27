@@ -1,0 +1,46 @@
+# Python
+
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual Environment
+
+.venv/
+venv/
+
+# Environment
+
+.env
+
+# Logs
+
+logs/
+
+*.log
+
+# VS Code
+
+.vscode/
+
+# Jupyter
+
+.ipynb_checkpoints/
+
+# dbt
+
+target/
+dbt_packages/
+
+# Airflow
+
+airflow.db
+
+# Streamlit
+
+.streamlit/secrets.toml
+
+# OS
+
+.DS_Store
+Thumbs.db

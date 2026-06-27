@@ -1,0 +1,57 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Warehouse with pgvector extension
+  postgres:
+    image: ankane/pgvector:latest
+    container_name: agentic_postgres
+    restart: always
+    environment:
+      POSTGRES_DB: warehouse
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - platform-network
+
+  # pgAdmin for Database Administration
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: agentic_pgadmin
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@platform.com
+      PGADMIN_DEFAULT_PASSWORD: admin_password
+    ports:
+      - "5050:80"
+    depends_on:
+      - postgres
+    networks:
+      - platform-network
+
+  # Chroma Vector Database Server
+  chromadb:
+    image: chromadb/chroma:latest
+    container_name: agentic_chromadb
+    restart: always
+    ports:
+      - "8000:8000"
+    volumes:
+      - chroma_data:/chroma/chroma
+    environment:
+      - IS_PERSISTENT=TRUE
+    networks:
+      - platform-network
+
+networks:
+  platform-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+    driver: local
+  chroma_data:
+    driver: local
