@@ -1,18 +1,32 @@
 # Agentic Data Platform
 
-An AI-powered modern data platform combining:
+An end-to-end modern Data Engineering platform enhanced with Generative AI.
 
-- Apache Airflow
-- PostgreSQL
-- dbt
-- pgvector
-- Gemini API
-- Streamlit
+## Features
 
-## Architecture
+- Automated data ingestion
+- Apache Airflow orchestration
+- PostgreSQL Data Warehouse
+- dbt transformations
+- pgvector semantic search
+- Gemini-powered Text-to-SQL
+- AI-powered pipeline failure diagnosis
+- Streamlit analytics interface
+- Dockerized deployment
 
-Coming Soon
+## Tech Stack
 
-## Setup
+| Layer | Technology |
+|--------|------------|
+| Language | Python |
+| Warehouse | PostgreSQL |
+| Orchestration | Apache Airflow |
+| Transformation | dbt |
+| Vector Store | pgvector |
+| LLM | Gemini 2.5 Flash |
+| Frontend | Streamlit |
+| Containerization | Docker |
 
-Coming Soon
+## Project Status
+
+🚧 Currently under development.

@@ -3,14 +3,13 @@ import os
 
 load_dotenv()
 
-POSTGRES_HOST = os.getenv("POSTGRES_HOST")
+class Settings:
+    POSTGRES_HOST = os.getenv("POSTGRES_HOST")
+    POSTGRES_PORT = os.getenv("POSTGRES_PORT")
+    POSTGRES_DB = os.getenv("POSTGRES_DB")
+    POSTGRES_USER = os.getenv("POSTGRES_USER")
+    POSTGRES_PASSWORD = os.getenv("POSTGRES_PASSWORD")
 
-POSTGRES_PORT = os.getenv("POSTGRES_PORT")
+    GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
-POSTGRES_DB = os.getenv("POSTGRES_DB")
-
-POSTGRES_USER = os.getenv("POSTGRES_USER")
-
-POSTGRES_PASSWORD = os.getenv("POSTGRES_PASSWORD")
-
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+settings = Settings()
