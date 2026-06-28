@@ -1,32 +1,13 @@
-# Agentic Data Platform
+## Project Progress
 
-An end-to-end modern Data Engineering platform enhanced with Generative AI.
-
-## Features
-
-- Automated data ingestion
-- Apache Airflow orchestration
-- PostgreSQL Data Warehouse
-- dbt transformations
-- pgvector semantic search
-- Gemini-powered Text-to-SQL
-- AI-powered pipeline failure diagnosis
-- Streamlit analytics interface
-- Dockerized deployment
-
-## Tech Stack
-
-| Layer | Technology |
-|--------|------------|
-| Language | Python |
-| Warehouse | PostgreSQL |
-| Orchestration | Apache Airflow |
-| Transformation | dbt |
-| Vector Store | pgvector |
-| LLM | Gemini 2.5 Flash |
-| Frontend | Streamlit |
-| Containerization | Docker |
-
-## Project Status
-
-🚧 Currently under development.
+- ✅ Milestone 1 – Repository Setup
+- ✅ Milestone 2 – Docker + PostgreSQL + pgvector
+- 🚧 Milestone 3 – Data Ingestion
+  - ✅ Generic CSV ingestion framework
+  - ⏳ Weather API ingestion
+- ⏳ Milestone 4 – Airflow Orchestration
+- ⏳ Milestone 5 – dbt Transformations
+- ⏳ Milestone 6 – AI/RAG Layer
+- ⏳ Milestone 7 – Streamlit Dashboard
+- ⏳ Milestone 8 – Failure Diagnosis Agent
+- ⏳ Milestone 9 – Deployment & Documentation

@@ -1,0 +1,9 @@
+load:
+  if_exists: replace
+  chunksize: 5000
+  method: multi
+  index: false
+
+validation:
+  fail_on_empty: true
+  drop_duplicates: false
