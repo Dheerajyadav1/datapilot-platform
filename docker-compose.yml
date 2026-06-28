@@ -1,48 +1,61 @@
-version: '3.8'
-
 services:
+
   # PostgreSQL Warehouse with pgvector extension
   postgres:
-    image: ankane/pgvector:latest
-    container_name: agentic_postgres
-    restart: always
+    image: pgvector/pgvector:pg17
+    container_name: agentic-postgres
+    restart: unless-stopped
+
     environment:
-      POSTGRES_DB: warehouse
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres_password
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+
     ports:
       - "5432:5432"
+
     volumes:
+      # Persist PostgreSQL data
       - postgres_data:/var/lib/postgresql/data
+
+      # Execute initialization SQL scripts
+      - ./docker/postgres/init:/docker-entrypoint-initdb.d
+
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "pg_isready -h localhost -U ${POSTGRES_USER} -d ${POSTGRES_DB}"
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
     networks:
       - platform-network
 
-  # pgAdmin for Database Administration
+  # pgAdmin for PostgreSQL administration
   pgadmin:
-    image: dpage/pgadmin4:latest
-    container_name: agentic_pgadmin
-    restart: always
+    image: dpage/pgadmin4:9.11
+    container_name: agentic-pgadmin
+    restart: unless-stopped
+
     environment:
-      PGADMIN_DEFAULT_EMAIL: admin@platform.com
-      PGADMIN_DEFAULT_PASSWORD: admin_password
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
+
     ports:
       - "5050:80"
-    depends_on:
-      - postgres
-    networks:
-      - platform-network
 
-  # Chroma Vector Database Server
-  chromadb:
-    image: chromadb/chroma:latest
-    container_name: agentic_chromadb
-    restart: always
-    ports:
-      - "8000:8000"
     volumes:
-      - chroma_data:/chroma/chroma
-    environment:
-      - IS_PERSISTENT=TRUE
+      # Persist pgAdmin configuration
+      - pgadmin_data:/var/lib/pgadmin
+
+    depends_on:
+      postgres:
+        condition: service_healthy
+
     networks:
       - platform-network
 
@@ -53,5 +66,6 @@ networks:
 volumes:
   postgres_data:
     driver: local
-  chroma_data:
+
+  pgadmin_data:
     driver: local

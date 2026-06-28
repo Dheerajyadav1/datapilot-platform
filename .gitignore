@@ -44,3 +44,11 @@ airflow.db
 
 .DS_Store
 Thumbs.db
+
+
+dbt/
+
+data/
+
+postgres_data/
+pgadmin_data/
