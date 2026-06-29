@@ -20,8 +20,11 @@ handlers:
     filename: logs/ingestion.log
     level: INFO
 
-root:
-  level: INFO
-  handlers:
-    - console
-    - file
+loggers:
+
+  ingestion:
+    level: INFO
+    handlers:
+      - console
+      - file
+    propagate: false
