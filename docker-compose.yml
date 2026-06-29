@@ -1,9 +1,59 @@
+x-airflow-common: &airflow-common
+
+  build:
+    context: .
+    dockerfile: docker/airflow/Dockerfile
+
+  user: "${AIRFLOW_UID}:0"
+
+  restart: unless-stopped
+
+  env_file:
+    - .env
+
+  environment:
+
+    POSTGRES_HOST: postgres
+
+    AIRFLOW_HOME: /opt/airflow
+
+    AIRFLOW__CORE__EXECUTOR: LocalExecutor
+
+    AIRFLOW__CORE__LOAD_EXAMPLES: "False"
+
+    AIRFLOW__WEBSERVER__SECRET_KEY: agentic-secret-key
+
+    AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${AIRFLOW_DB}
+
+  volumes:
+
+    - ./:/opt/airflow/project
+
+    - ./dags:/opt/airflow/dags
+
+    - airflow_logs:/opt/airflow/logs
+
+  depends_on:
+
+    postgres:
+      condition: service_healthy
+
+  networks:
+    - platform-network
+
+
 services:
 
-  # PostgreSQL Warehouse with pgvector extension
+###############################################################
+# PostgreSQL
+###############################################################
+
   postgres:
+
     image: pgvector/pgvector:pg17
+
     container_name: agentic-postgres
+
     restart: unless-stopped
 
     environment:
@@ -15,17 +65,14 @@ services:
       - "5432:5432"
 
     volumes:
-      # Persist PostgreSQL data
       - postgres_data:/var/lib/postgresql/data
-
-      # Execute initialization SQL scripts
       - ./docker/postgres/init:/docker-entrypoint-initdb.d
 
     healthcheck:
       test:
         [
           "CMD-SHELL",
-          "pg_isready -h localhost -U ${POSTGRES_USER} -d ${POSTGRES_DB}"
+          "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"
         ]
       interval: 10s
       timeout: 5s
@@ -35,10 +82,17 @@ services:
     networks:
       - platform-network
 
-  # pgAdmin for PostgreSQL administration
+
+###############################################################
+# pgAdmin
+###############################################################
+
   pgadmin:
+
     image: dpage/pgadmin4:9.11
+
     container_name: agentic-pgadmin
+
     restart: unless-stopped
 
     environment:
@@ -49,7 +103,6 @@ services:
       - "5050:80"
 
     volumes:
-      # Persist pgAdmin configuration
       - pgadmin_data:/var/lib/pgadmin
 
     depends_on:
@@ -59,13 +112,90 @@ services:
     networks:
       - platform-network
 
+
+###############################################################
+# Airflow Init
+###############################################################
+
+
+  airflow-init:
+
+    <<: *airflow-common
+
+    container_name: airflow-init
+
+    restart: "no"
+
+    command: bash /opt/airflow/project/docker/airflow/init_airflow.sh
+
+
+###############################################################
+# Airflow Scheduler
+###############################################################
+
+  airflow-scheduler:
+
+    <<: *airflow-common
+
+    container_name: airflow-scheduler
+
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+      airflow-init:
+        condition: service_completed_successfully
+
+    command: scheduler
+
+
+###############################################################
+# Airflow Webserver
+###############################################################
+
+  airflow-webserver:
+
+    <<: *airflow-common
+
+    container_name: airflow-webserver
+
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+      airflow-init:
+        condition: service_completed_successfully
+
+    command: webserver
+
+    ports:
+      - "8080:8080"
+
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+
+###############################################################
+# Networks
+###############################################################
+
 networks:
+
   platform-network:
     driver: bridge
 
+
+###############################################################
+# Volumes
+###############################################################
+
 volumes:
+
   postgres_data:
-    driver: local
 
   pgadmin_data:
-    driver: local
+
+  airflow_logs:

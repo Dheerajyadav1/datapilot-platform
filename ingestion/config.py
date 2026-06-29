@@ -35,15 +35,15 @@ class Config:
         # Database
         # -----------------------------
 
-        self.db_name = os.getenv("POSTGRES_DB")
+        self.db_name = os.getenv("POSTGRES_DB", "agentic_db")
 
-        self.db_user = os.getenv("POSTGRES_USER")
+        self.db_user = os.getenv("POSTGRES_USER", "postgres")
 
-        self.db_password = os.getenv("POSTGRES_PASSWORD")
+        self.db_password = os.getenv("POSTGRES_PASSWORD", "postgres")
 
         self.db_host = os.getenv("POSTGRES_HOST", "localhost")
 
-        self.db_port = os.getenv("POSTGRES_PORT", "5432")
+        self.db_port = int(os.getenv("POSTGRES_PORT", "5432"))
 
         self.database_url = (
             f"postgresql+psycopg2://"
