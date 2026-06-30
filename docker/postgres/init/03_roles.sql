@@ -24,25 +24,25 @@ GRANT CONNECT ON DATABASE agentic_db TO readonly_user;
 
 -- Allow schema access
 GRANT USAGE ON SCHEMA raw TO readonly_user;
-GRANT USAGE ON SCHEMA staging TO readonly_user;
-GRANT USAGE ON SCHEMA marts TO readonly_user;
-GRANT USAGE ON SCHEMA embeddings TO readonly_user;
+GRANT USAGE ON SCHEMA bronze TO readonly_user;
+GRANT USAGE ON SCHEMA silver TO readonly_user;
+GRANT USAGE ON SCHEMA gold TO readonly_user;
 
 -- Read access to existing tables
 GRANT SELECT ON ALL TABLES IN SCHEMA raw TO readonly_user;
-GRANT SELECT ON ALL TABLES IN SCHEMA staging TO readonly_user;
-GRANT SELECT ON ALL TABLES IN SCHEMA marts TO readonly_user;
-GRANT SELECT ON ALL TABLES IN SCHEMA embeddings TO readonly_user;
+GRANT SELECT ON ALL TABLES IN SCHEMA bronze TO readonly_user;
+GRANT SELECT ON ALL TABLES IN SCHEMA silver TO readonly_user;
+GRANT SELECT ON ALL TABLES IN SCHEMA gold TO readonly_user;
 
 -- Read access to future tables
 ALTER DEFAULT PRIVILEGES IN SCHEMA raw
 GRANT SELECT ON TABLES TO readonly_user;
 
-ALTER DEFAULT PRIVILEGES IN SCHEMA staging
+ALTER DEFAULT PRIVILEGES IN SCHEMA bronze
 GRANT SELECT ON TABLES TO readonly_user;
 
-ALTER DEFAULT PRIVILEGES IN SCHEMA marts
+ALTER DEFAULT PRIVILEGES IN SCHEMA silver
 GRANT SELECT ON TABLES TO readonly_user;
 
-ALTER DEFAULT PRIVILEGES IN SCHEMA embeddings
+ALTER DEFAULT PRIVILEGES IN SCHEMA gold
 GRANT SELECT ON TABLES TO readonly_user;
