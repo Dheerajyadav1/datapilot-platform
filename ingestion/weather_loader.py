@@ -7,6 +7,13 @@ from ingestion.config import Config
 from ingestion.database import DatabaseManager
 from ingestion.logger import LoggerManager
 from ingestion.models.load_result import LoadResult
+from ingestion.validation import (
+    DataValidator,
+    NoDuplicateRule,
+    NotEmptyRule,
+    RequiredColumnsRule,
+)
+from ingestion.validation.logger import ValidationLogger
 
 
 class WeatherLoader:
@@ -22,7 +29,30 @@ class WeatherLoader:
         self.config = config
         self.database = database
         self.engine = database.get_engine()
-        self.logger = logger.get_logger(self.__class__.__name__)
+
+        self.logger = logger.get_logger(
+            self.__class__.__name__
+        )
+
+        self.validation_logger = ValidationLogger(
+            logger
+        )
+
+        self.validator = DataValidator(
+            rules=[
+                NotEmptyRule(),
+                NoDuplicateRule(),
+                RequiredColumnsRule(
+                    [
+                        "time",
+                        "temperature_2m",
+                        "relative_humidity_2m",
+                        "precipitation",
+                        "wind_speed_10m",
+                    ]
+                ),
+            ]
+        )
 
     def load(
         self,
@@ -39,14 +69,33 @@ class WeatherLoader:
                 longitude,
             )
 
-            dataframe = self._to_dataframe(weather_json)
+            dataframe = self._to_dataframe(
+                weather_json
+            )
 
-            self._write_to_database(dataframe)
+            report = self.validator.validate(
+                dataframe
+            )
 
-            execution_time = perf_counter() - start_time
+            self.validation_logger.log(
+                report
+            )
+
+            if not report.passed:
+                raise ValueError(
+                    "Weather validation failed."
+                )
+
+            self._write_to_database(
+                dataframe
+            )
+
+            execution_time = (
+                perf_counter() - start_time
+            )
 
             self.logger.info(
-                f"{len(dataframe)} weather records loaded."
+                f"{len(dataframe):,} weather records loaded."
             )
 
             return LoadResult(
@@ -59,7 +108,9 @@ class WeatherLoader:
 
         except Exception as error:
 
-            execution_time = perf_counter() - start_time
+            execution_time = (
+                perf_counter() - start_time
+            )
 
             self.logger.exception(error)
 
@@ -105,7 +156,9 @@ class WeatherLoader:
         weather_json: dict,
     ) -> pd.DataFrame:
 
-        dataframe = pd.DataFrame(weather_json["hourly"])
+        dataframe = pd.DataFrame(
+            weather_json["hourly"]
+        )
 
         dataframe["time"] = pd.to_datetime(
             dataframe["time"]

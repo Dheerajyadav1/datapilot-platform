@@ -1,4 +1,3 @@
-from pathlib import Path
 from time import perf_counter
 
 import pandas as pd
@@ -7,6 +6,13 @@ from ingestion.config import Config
 from ingestion.database import DatabaseManager
 from ingestion.logger import LoggerManager
 from ingestion.models.load_result import LoadResult
+from ingestion.validation import (
+    DataValidator,
+    NoDuplicateRule,
+    NotEmptyRule,
+    RequiredColumnsRule,
+)
+from ingestion.validation.logger import ValidationLogger
 
 
 class CSVLoader:
@@ -29,19 +35,66 @@ class CSVLoader:
         self.config = config
         self.database = database
         self.engine = database.get_engine()
-        self.logger = logger.get_logger(self.__class__.__name__)
 
-    def load(self, source_name: str) -> LoadResult:
+        self.logger = logger.get_logger(
+            self.__class__.__name__
+        )
+
+        self.validation_logger = ValidationLogger(
+            logger
+        )
+
+    def load(
+        self,
+        source_name: str,
+    ) -> LoadResult:
 
         start_time = perf_counter()
 
         try:
 
-            table_config = self._get_table_config(source_name)
+            table_config = self._get_table_config(
+                source_name
+            )
 
-            dataframe = self._read_csv(table_config["file"])
+            dataframe = self._read_csv(
+                table_config["file"]
+            )
 
-            self._validate_dataframe(dataframe)
+            # 1. Deduplicate if configured
+            drop_duplicates = self.config.settings["validation"]["drop_duplicates"]
+            primary_key = table_config.get("primary_key", [])
+
+            if drop_duplicates:
+                subset = primary_key if primary_key else None
+                dataframe = dataframe.drop_duplicates(subset=subset)
+
+            # 2. Build dynamic validation rules
+            rules = [
+                NotEmptyRule(),
+                RequiredColumnsRule(
+                    list(dataframe.columns)
+                ),
+            ]
+
+            # Only enforce uniqueness if the table has a primary key
+            if primary_key:
+                rules.append(NoDuplicateRule(columns=primary_key))
+
+            validator = DataValidator(rules=rules)
+
+            report = validator.validate(
+                dataframe
+            )
+
+            self.validation_logger.log(
+                report
+            )
+
+            if not report.passed:
+                raise ValueError(
+                    "CSV validation failed."
+                )
 
             self._write_to_database(
                 dataframe=dataframe,
@@ -49,7 +102,9 @@ class CSVLoader:
                 table=table_config["table"],
             )
 
-            execution_time = perf_counter() - start_time
+            execution_time = (
+                perf_counter() - start_time
+            )
 
             self.logger.info(
                 f"{len(dataframe):,} rows loaded into "
@@ -66,7 +121,9 @@ class CSVLoader:
 
         except Exception as error:
 
-            execution_time = perf_counter() - start_time
+            execution_time = (
+                perf_counter() - start_time
+            )
 
             self.logger.exception(error)
 
@@ -79,30 +136,33 @@ class CSVLoader:
                 message=str(error),
             )
 
-    def _get_table_config(self, source_name: str) -> dict:
-        return self.config.tables["tables"][source_name]
+    def _get_table_config(
+        self,
+        source_name: str,
+    ) -> dict:
 
-    def _read_csv(self, filename: str) -> pd.DataFrame:
+        return self.config.tables["tables"][
+            source_name
+        ]
 
-        filepath = self.config.olist_data_dir / filename
+    def _read_csv(
+        self,
+        filename: str,
+    ) -> pd.DataFrame:
+
+        filepath = (
+            self.config.olist_data_dir
+            / filename
+        )
 
         if not filepath.exists():
             raise FileNotFoundError(filepath)
 
-        self.logger.info(f"Reading {filepath.name}")
+        self.logger.info(
+            f"Reading {filepath.name}"
+        )
 
         return pd.read_csv(filepath)
-
-    def _validate_dataframe(self, dataframe: pd.DataFrame):
-
-        if (
-            self.config.settings["validation"]["fail_on_empty"]
-            and dataframe.empty
-        ):
-            raise ValueError("CSV file is empty.")
-
-        if self.config.settings["validation"]["drop_duplicates"]:
-            dataframe.drop_duplicates(inplace=True)
 
     def _write_to_database(
         self,
@@ -111,7 +171,9 @@ class CSVLoader:
         table: str,
     ):
 
-        self.logger.info(f"Loading into {schema}.{table}")
+        self.logger.info(
+            f"Loading into {schema}.{table}"
+        )
 
         dataframe.to_sql(
             name=table,

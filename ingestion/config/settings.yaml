@@ -6,4 +6,4 @@ load:
 
 validation:
   fail_on_empty: true
-  drop_duplicates: false
+  drop_duplicates: true
