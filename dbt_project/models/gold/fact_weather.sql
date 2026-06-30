@@ -1,0 +1,11 @@
+{{ config(materialized='table') }}
+
+SELECT
+
+    time,
+    temperature_2m,
+    relative_humidity_2m,
+    precipitation,
+    wind_speed_10m
+
+FROM {{ ref('stg_weather') }}
