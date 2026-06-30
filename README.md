@@ -1,393 +1,224 @@
 # 🚀 Agentic Data Platform
 
-> **Building an AI-Native Data Platform from Scratch**
+An end-to-end modern data engineering platform built using **Python, PostgreSQL, Apache Airflow, Docker, and dbt**.
 
-A production-inspired data engineering project that combines modern ETL pipelines, a cloud-ready data warehouse, orchestration, analytics engineering, vector search, and AI-powered querying into a unified platform.
-
-The goal of this project is to demonstrate how modern Data Engineering is evolving from traditional ETL pipelines into **AI-native data platforms**, where Large Language Models can understand business metadata, generate SQL safely, diagnose pipeline failures, and enable natural language analytics.
+The project demonstrates how to build a production-style data platform capable of ingesting data from multiple sources, transforming it through a layered warehouse architecture, validating data quality, and orchestrating the complete pipeline.
 
 ---
 
-## ✨ Project Goals
+## ✨ Current Features
 
-This project demonstrates how to build a modern data platform from scratch using industry-standard tools.
-
-It includes:
-
-- Configuration-driven data ingestion
-- Dockerized infrastructure
+- CSV Data Ingestion
+- Weather API Integration (Open-Meteo)
 - PostgreSQL Data Warehouse
-- Weather API ingestion
-- Structured logging
-- Airflow orchestration *(Upcoming)*
-- dbt transformations *(Upcoming)*
-- Vector embeddings *(Upcoming)*
-- Gemini-powered Text-to-SQL *(Upcoming)*
-- Streamlit analytics application *(Upcoming)*
+- Multi-layer Architecture
+  - Raw
+  - Bronze
+  - Silver
+  - Gold
+- Data Validation Framework
+- Centralized Configuration Management
+- Logging & Error Handling
+- Apache Airflow Orchestration
+- dbt Transformations
+- dbt Data Quality Tests
+- Dockerized Development Environment
 
 ---
 
-# 🏗️ Architecture
+## 🏗️ Project Architecture
 
-```text
-                    External Data Sources
-              ┌────────────────────────────┐
-              │                            │
-              │    Olist CSV Dataset       │
-              │    Open-Meteo Weather API  │
-              └──────────────┬─────────────┘
-                             │
-                             ▼
-                  Generic Ingestion Layer
-              ┌────────────────────────────┐
-              │  CSV Loader                │
-              │  Weather Loader            │
-              │  Config Manager            │
-              │  Logger                    │
-              └──────────────┬─────────────┘
-                             │
-                             ▼
-                 PostgreSQL Data Warehouse
-              ┌────────────────────────────┐
-              │ raw schema                 │
-              │ staging schema             │
-              │ marts schema               │
-              │ embeddings schema          │
-              └──────────────┬─────────────┘
-                             │
-                             ▼
-                Airflow Orchestration
-                     (Coming Soon)
-                             │
-                             ▼
-                     dbt Transformations
-                     (Coming Soon)
-                             │
-                             ▼
-                  Gemini Text-to-SQL Agent
-                     (Coming Soon)
-                             │
-                             ▼
-                    Streamlit Dashboard
-                     (Coming Soon)
+```
+CSV Files + Weather API
+          │
+          ▼
+    Ingestion Layer
+          │
+          ▼
+     PostgreSQL (Raw)
+          │
+          ▼
+   Bronze → Silver
+          │
+          ▼
+      dbt Staging
+          │
+          ▼
+      Gold Models
+          │
+          ▼
+     Data Quality Tests
+          │
+          ▼
+        Airflow DAG
 ```
 
 ---
 
-# 📂 Repository Structure
+## 🛠️ Tech Stack
+
+- Python 3.11
+- PostgreSQL
+- SQLAlchemy
+- Pandas
+- Apache Airflow
+- dbt
+- Docker & Docker Compose
+- pgAdmin
+- HTTPX
+- PyYAML
+
+---
+
+## 📂 Project Structure
 
 ```
 agentic-data-platform/
 
+├── app/
+├── config/
+├── dags/
+├── dbt_project/
 ├── docker/
-│   └── postgres/
-│
 ├── ingestion/
-│   ├── config/
-│   ├── models/
-│   ├── config.py
-│   ├── csv_loader.py
-│   ├── database.py
-│   ├── logger.py
-│   ├── main.py
-│   └── weather_loader.py
-│
 ├── tests/
-│
-├── data/
-│
-├── docs/
-│
+├── warehouse/
 ├── docker-compose.yml
-├── requirements.txt
+├── pyproject.toml
 └── README.md
 ```
 
 ---
 
-# ⚙️ Technology Stack
+## 🚀 Running the Project
 
-| Category | Technologies |
-|-----------|--------------|
-| Language | Python |
-| Warehouse | PostgreSQL 17 |
-| Database Extension | pgvector |
-| Administration | pgAdmin |
-| Containerization | Docker & Docker Compose |
-| Data Processing | Pandas |
-| HTTP Client | httpx |
-| ORM | SQLAlchemy |
-| Configuration | YAML |
-| Logging | Python Logging |
-| API | Open-Meteo |
-| Version Control | Git & GitHub |
-
----
-
-# 📊 Data Sources
-
-## 1. Olist Brazilian E-Commerce Dataset
-
-Used to simulate a real-world transactional data warehouse.
-
-Includes:
-
-- Customers
-- Orders
-- Order Items
-- Products
-- Sellers
-- Reviews
-- Payments
-- Geolocation
-
----
-
-## 2. Open-Meteo Weather API
-
-Used to demonstrate API ingestion into the warehouse.
-
-Current metrics:
-
-- Temperature
-- Humidity
-- Precipitation
-- Wind Speed
-
----
-
-# ✅ Current Features
-
-- Configuration-driven ingestion
-- Generic CSV Loader
-- Open-Meteo API ingestion
-- PostgreSQL warehouse
-- Structured logging
-- Dockerized infrastructure
-- Reusable database manager
-- Unified ingestion pipeline
-
----
-
-# 🚧 Project Roadmap
-
-## ✅ Milestone 1
-
-Repository Setup
-
----
-
-## ✅ Milestone 2
-
-Infrastructure
-
-- Docker
-- PostgreSQL
-- pgvector
-- pgAdmin
-
----
-
-## ✅ Milestone 3
-
-Data Ingestion
-
-- Generic CSV Loader
-- Weather API Loader
-- Unified Pipeline
-
----
-
-## 🔄 Milestone 4
-
-Airflow Orchestration
-
-- DAGs
-- Scheduling
-- Retries
-- Monitoring
-
----
-
-## 🔄 Milestone 5
-
-dbt Transformations
-
-- Staging Models
-- Mart Models
-- Testing
-- Documentation
-
----
-
-## 🔄 Milestone 6
-
-AI Layer
-
-- Gemini Function Calling
-- Text-to-SQL
-- SQL Validation
-- Vector Search
-
----
-
-## 🔄 Milestone 7
-
-Streamlit Dashboard
-
-- Chat Interface
-- SQL Display
-- Analytics
-- Visualizations
-
----
-
-## 🔄 Milestone 8
-
-Failure Diagnosis Agent
-
-- Airflow Failure Analysis
-- Root Cause Detection
-- Slack Notifications
-
----
-
-## 🔄 Milestone 9
-
-Deployment
-
-- End-to-End Docker Deployment
-- Documentation
-- Demo Video
-
----
-
-# 🚀 Getting Started
-
-## Clone
+Clone the repository
 
 ```bash
-git clone https://github.com/Dheerajyadav1/agentic-data-platform.git
-
-cd agentic-data-platform
+git clone https://github.com/<your-username>/agentic-data-platform.git
 ```
 
----
-
-## Create Environment
-
-```bash
-python -m venv .venv
-```
-
-Activate
-
-Windows
-
-```bash
-.venv\Scripts\activate
-```
-
-Linux
-
-```bash
-source .venv/bin/activate
-```
-
----
-
-## Install Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
----
-
-## Configure Environment
-
-Create
-
-```
-.env
-```
-
-using
-
-```
-.env.example
-```
-
----
-
-## Start Docker
+Start Docker services
 
 ```bash
 docker compose up -d
 ```
 
----
-
-## Run Ingestion
+Run the ingestion pipeline
 
 ```bash
-python ingestion/main.py
+python ingestion/pipeline.py
+```
+
+Run the warehouse pipeline
+
+```bash
+python warehouse/pipeline.py
+```
+
+Run dbt models
+
+```bash
+cd dbt_project
+
+dbt run
+
+dbt test
+```
+
+Launch Airflow
+
+```
+http://localhost:8080
+```
+
+Launch pgAdmin
+
+```
+http://localhost:5050
 ```
 
 ---
 
-# 🎯 Learning Objectives
+## 📊 Current Pipeline
 
-This project demonstrates practical experience with:
-
-- Data Engineering
-- ETL Pipelines
-- Docker
-- PostgreSQL
-- SQLAlchemy
-- YAML Configuration
-- Logging
-- API Integration
-- Data Warehousing
-- Software Architecture
-- AI-ready Data Platforms
+```
+CSV + API
+    │
+    ▼
+Ingestion
+    │
+    ▼
+Raw Layer
+    │
+    ▼
+Bronze Layer
+    │
+    ▼
+Silver Layer
+    │
+    ▼
+Gold Layer (dbt)
+    │
+    ▼
+Data Quality Tests
+    │
+    ▼
+Airflow Orchestration
+```
 
 ---
 
-# 📈 Future Enhancements
+## ⚠️ Known Data Quality Issue
 
-- Apache Airflow
-- dbt
-- ChromaDB / pgvector Embeddings
-- Gemini Text-to-SQL Agent
-- SQL Guardrails
-- Failure Diagnosis Agent
-- Streamlit Dashboard
+The Olist dataset contains **3 records without payment information**.
+
+The `dbt` test
+
+```
+not_null_fact_sales_payment_value
+```
+
+fails intentionally to demonstrate automated data quality validation rather than silently masking source data issues.
+
+---
+
+## 🚧 Upcoming Features
+
+- Streamlit Analytics Dashboard
+- AI Analytics Assistant
+- RAG over Warehouse Metadata
+- Natural Language to SQL
+- Interactive Business Reports
 - CI/CD Pipeline
-- Unit Testing
-- Integration Testing
+- Cloud Deployment
 
 ---
 
-# 🤝 Contributing
+## 📅 Project Status
 
-Contributions, ideas, and suggestions are welcome.
+✅ Milestone 1 — Project Setup
 
-Feel free to fork the repository and open a Pull Request.
+✅ Milestone 2 — Data Ingestion
+
+✅ Milestone 3 — Database Layer
+
+✅ Milestone 4 — Validation Framework
+
+✅ Milestone 5 — Production Ingestion Pipeline
+
+✅ Milestone 6 — Data Warehouse
+
+✅ Milestone 7 — Airflow + dbt Integration
+
+🚧 Milestone 8 — Analytics Dashboard (In Progress)
 
 ---
 
-# 📄 License
+## 👨‍💻 Author
 
-This project is licensed under the MIT License.
+**Dheeraj Yadav**
 
----
+B.Tech CSE | IIIT Bhagalpur
 
-# ⭐ Acknowledgements
-
-- Olist Brazilian E-Commerce Dataset
-- Open-Meteo
-- PostgreSQL
-- Apache Airflow
-- dbt Labs
-- Google Gemini
+Aspiring Data Engineer & Data Scientist

@@ -15,8 +15,16 @@ ARG CONSTRAINT_URL="https://raw.githubusercontent.com/apache/airflow/constraints
 
 COPY docker/airflow/requirements.txt /tmp/requirements.txt
 
+# Install Airflow-related packages with Airflow constraints
 RUN pip install --no-cache-dir \
     --constraint "${CONSTRAINT_URL}" \
-    -r /tmp/requirements.txt
+    psycopg2-binary \
+    requests \
+    python-dotenv \
+    PyYAML
+
+# Install dbt WITHOUT Airflow constraints
+RUN pip install --no-cache-dir \
+    "dbt-postgres==1.10.2"
 
 ENV PYTHONPATH="/opt/airflow/project:${PYTHONPATH}"
