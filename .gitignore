@@ -1,54 +1,39 @@
 # Python
-
 __pycache__/
 *.py[cod]
 *.pyo
 
 # Virtual Environment
-
 .venv/
-venv/
 
 # Environment
-
 .env
 
-# Logs
-
-logs/
-
-*.log
-
-# VS Code
-
-.vscode/
-
-# Jupyter
-
-.ipynb_checkpoints/
+# Airflow
+airflow_logs/
 
 # dbt
-
-target/
-dbt_packages/
-
-# Airflow
-
-airflow.db
+dbt_project/logs/
+dbt_project/target/
+dbt_project/dbt_packages/
 
 # Streamlit
-
 .streamlit/secrets.toml
 
-# OS
+# VS Code
+.vscode/
 
+# OS
 .DS_Store
 Thumbs.db
 
+# Pytest
+.pytest_cache/
 
-dbt/
+# Coverage
+.coverage
+htmlcov/
 
-data/
-
-postgres_data/
-pgadmin_data/
+# Logs
+logs/
+*.log
