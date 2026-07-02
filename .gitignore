@@ -5,35 +5,32 @@ __pycache__/
 
 # Virtual Environment
 .venv/
-
-# Environment
-.env
-
-# Airflow
-airflow_logs/
-
-# dbt
-dbt_project/logs/
-dbt_project/target/
-dbt_project/dbt_packages/
+venv/
 
 # Streamlit
 .streamlit/secrets.toml
 
-# VS Code
+# Logs
+logs/
+*.log
+
+# dbt
+dbt_project/target/
+dbt_project/dbt_packages/
+
+# Airflow
+airflow_logs/
+
+# RAG
+agents/rag/index/
+
+# IDE
 .vscode/
+.idea/
 
 # OS
 .DS_Store
 Thumbs.db
 
-# Pytest
-.pytest_cache/
-
-# Coverage
-.coverage
-htmlcov/
-
-# Logs
-logs/
-*.log
+# Environment
+.env
