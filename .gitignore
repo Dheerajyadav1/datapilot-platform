@@ -1,36 +1,101 @@
+# ==============================
 # Python
+# ==============================
 __pycache__/
 *.py[cod]
+*$py.class
 *.pyo
+*.pyd
 
 # Virtual Environment
 .venv/
 venv/
+env/
 
-# Streamlit
-.streamlit/secrets.toml
+# ==============================
+# Environment Variables
+# ==============================
+.env
+.env.*
 
-# Logs
-logs/
-*.log
+!.env.example
 
-# dbt
-dbt_project/target/
-dbt_project/dbt_packages/
-
-# Airflow
-airflow_logs/
-
-# RAG
-agents/rag/index/
-
+# ==============================
 # IDE
+# ==============================
 .vscode/
 .idea/
 
-# OS
+# ==============================
+# Python Testing
+# ==============================
+.pytest_cache/
+.coverage
+htmlcov/
+.pyre/
+.mypy_cache/
+.ruff_cache/
+
+# ==============================
+# Logs
+# ==============================
+logs/
+*.log
+
+# ==============================
+# Jupyter
+# ==============================
+.ipynb_checkpoints/
+
+# ==============================
+# OS Files
+# ==============================
 .DS_Store
 Thumbs.db
 
-# Environment
-.env
+# ==============================
+# Streamlit Cache
+# ==============================
+.streamlit/secrets.toml
+
+# ==============================
+# Airflow
+# ==============================
+airflow.db
+airflow-webserver.pid
+airflow.cfg
+
+# ==============================
+# dbt
+# ==============================
+dbt_packages/
+target/
+logs/
+
+# ==============================
+# Build Files
+# ==============================
+dist/
+build/
+*.egg-info/
+
+# ==============================
+# Vector Store
+# ==============================
+vector_store/
+*.faiss
+*.pkl
+*.index
+
+# ==============================
+# Local Data
+# ==============================
+data/raw/
+data/processed/
+data/temp/
+
+# ==============================
+# Misc
+# ==============================
+.cache/
+*.tmp
