@@ -1,3 +1,10 @@
+import os
+import sys
+
+# Force project root to be resolved first to avoid library namespace conflicts
+root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../.."))
+sys.path.insert(0, root_dir)
+
 import streamlit as st
 import pandas as pd
 

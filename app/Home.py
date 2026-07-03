@@ -1,6 +1,6 @@
 import streamlit as st
 
-from app.config import AppConfig
+from app.app_config import AppConfig
 from app.components.sidebar import Sidebar
 from app.services.dashboard_service import DashboardService
 from app.components.charts import Charts
