@@ -6,7 +6,7 @@ from app.services.dashboard_service import DashboardService
 from app.components.charts import Charts
 from app.components.metrics import MetricCard
 from app.components.footer import Footer
-from app.utils.helpers import load_css
+from app.utils.helpers import load_css, render_header
 from app.utils.formatting import Formatter
 
 
@@ -26,8 +26,7 @@ Sidebar.render()
 service = DashboardService()
 
 # Title and Header Card
-st.title("🚀 Agentic Data Platform")
-st.markdown("### Modern End-to-End Data Engineering Platform")
+render_header("🚀 Agentic Data Platform", "Modern End-to-End Data Engineering Platform")
 st.divider()
 
 # Project Overview Card

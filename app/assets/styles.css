@@ -1,43 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+/* ==========================================
+   1. Typography & Global Layout
+   ========================================== */
+html, body, [class*="css"], .stMarkdown {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #1e293b;
+}
+
 .main > div {
-    padding-top: 1rem;
-    padding-bottom: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 4rem;
 }
 
 .block-container {
-    padding-top: 1rem;
+    max-width: 1200px;
+    padding-top: 1.5rem;
 }
 
-.metric-card {
-    background: white;
-    border-radius: 15px;
-    padding: 18px;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.08);
-    border: 1px solid #ECECEC;
+/* Custom linear gradient headers */
+.gradient-title {
+    background: linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
 }
 
-.chart-card {
-    background: white;
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.08);
+.gradient-subtitle {
+    color: #64748b;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
 }
 
-h1 {
+/* ==========================================
+   2. Dark Looker-style Sidebar Styling
+   ========================================== */
+[data-testid="stSidebar"] {
+    background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+[data-testid="stSidebar"] * {
+    color: #cbd5e1 !important;
+}
+
+[data-testid="stSidebarNav"] li a {
+    border-radius: 8px !important;
+    margin: 4px 12px !important;
+    padding: 10px 14px !important;
+    font-size: 0.925rem !important;
+    font-weight: 500 !important;
+    transition: all 0.2s ease !important;
+    border: 1px solid transparent !important;
+}
+
+[data-testid="stSidebarNav"] li a:hover {
+    background-color: rgba(255, 255, 255, 0.07) !important;
+    color: #ffffff !important;
+    transform: translateX(3px);
+}
+
+[data-testid="stSidebarNav"] li a[aria-current="page"] {
+    background: linear-gradient(90deg, rgba(79, 70, 229, 0.25) 0%, rgba(6, 182, 212, 0.15) 100%) !important;
+    border-left: 3px solid #4f46e5 !important;
+    border-color: rgba(79, 70, 229, 0.4) !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+}
+
+/* Platform Status Pill in Sidebar */
+.status-indicator {
+    padding: 10px 14px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    margin: 15px 12px;
+}
+
+/* ==========================================
+   3. Custom BI Dashboard Metric Cards
+   ========================================== */
+.metric-card-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.custom-metric-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px 24px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.custom-metric-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 20px -8px rgba(99, 102, 241, 0.15);
+    border-color: rgba(99, 102, 241, 0.35);
+}
+
+.custom-metric-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, #4f46e5 0%, #06b6d4 100%);
+    opacity: 0.8;
+}
+
+.custom-metric-title {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 6px;
+}
+
+.custom-metric-value {
+    font-size: 1.85rem;
     font-weight: 700;
+    color: #0f172a;
+    letter-spacing: -0.03em;
 }
 
-h2 {
+/* ==========================================
+   4. Business Insights & Alert Styles
+   ========================================== */
+div.stAlert {
+    border-radius: 12px;
+    border: 1px solid transparent;
+    padding: 1rem 1.25rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+div.stAlert[data-baseweb="notification"] {
+    background-color: #f8fafc;
+}
+
+/* ==========================================
+   5. Chart Containers & Table Stylings
+   ========================================== */
+.custom-chart-container {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 24px;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03);
+    margin-bottom: 24px;
+}
+
+/* Styled pandas data tables */
+.dataframe {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 10px 0;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.dataframe th {
+    background-color: #f1f5f9;
+    color: #475569;
     font-weight: 600;
+    text-align: left;
+    padding: 12px 16px;
+    border-bottom: 2px solid #e2e8f0;
 }
 
-h3 {
-    font-weight: 600;
+.dataframe td {
+    padding: 10px 16px;
+    border-bottom: 1px solid #f1f5f9;
+    color: #334155;
 }
 
+.dataframe tr:hover {
+    background-color: #f8fafc;
+}
+
+/* ==========================================
+   6. Conversational AI Chat Aesthetics
+   ========================================== */
+.stChatMessage {
+    border-radius: 16px !important;
+    padding: 16px 20px !important;
+    margin-bottom: 16px !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02) !important;
+}
+
+/* User Message bubble */
+.stChatMessage[data-testid="stChatMessageUser"] {
+    background-color: #f0fdfa !important;
+    border: 1px solid #ccfbf1 !important;
+}
+
+/* Assistant Message bubble */
+.stChatMessage[data-testid="stChatMessageAssistant"] {
+    background-color: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+}
+
+/* AI Trace Toggles */
+.stExpander {
+    border-radius: 10px !important;
+    border: 1px solid #e2e8f0 !important;
+    background: #ffffff !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02) !important;
+    overflow: hidden;
+}
+
+/* Custom SQL Trace Monospace block */
+.sql-trace-block {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    background-color: #0f172a;
+    color: #f8fafc;
+    padding: 16px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    border: 1px solid #334155;
+    overflow-x: auto;
+}
+
+/* ==========================================
+   7. Hide Default Streamlit Elements
+   ========================================== */
 footer {
     visibility: hidden;
 }
-
 #MainMenu {
     visibility: hidden;
+}
+header {
+    background: rgba(255, 255, 255, 0.8) !important;
+    backdrop-filter: blur(10px);
 }

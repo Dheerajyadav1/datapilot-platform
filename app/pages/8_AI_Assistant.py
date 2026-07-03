@@ -14,7 +14,7 @@ from agents.core.orchestrator import AgentOrchestrator
 
 from app.components.sidebar import Sidebar
 from app.components.footer import Footer
-from app.utils.helpers import load_css
+from app.utils.helpers import load_css, render_header
 
 st.set_page_config(
     page_title="AI Assistant",
@@ -25,10 +25,7 @@ st.set_page_config(
 load_css()
 Sidebar.render()
 
-st.title("🤖 AI Data Assistant")
-st.write(
-    "Ask questions about your data warehouse, pipeline health, business trends, or platform architecture."
-)
+render_header("🤖 AI Data Assistant", "Ask questions about your data warehouse, pipeline health, business trends, or platform architecture.")
 st.divider()
 
 if "messages" not in st.session_state:

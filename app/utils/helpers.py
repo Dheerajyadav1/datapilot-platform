@@ -17,3 +17,11 @@ def load_css():
             f"<style>{f.read()}</style>",
             unsafe_allow_html=True,
         )
+
+
+def render_header(title, subtitle=None):
+    st.markdown(f'<h1 class="gradient-title">{title}</h1>', unsafe_allow_html=True)
+    if subtitle:
+        st.markdown(f'<p class="gradient-subtitle">{subtitle}</p>', unsafe_allow_html=True)
+    else:
+        st.markdown('<div style="margin-bottom: 1.5rem;"></div>', unsafe_allow_html=True)

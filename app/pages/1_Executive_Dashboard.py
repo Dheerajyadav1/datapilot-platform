@@ -6,7 +6,7 @@ from app.components.charts import Charts
 from app.components.tables import Tables
 from app.components.footer import Footer
 from app.services.dashboard_service import DashboardService
-from app.utils.helpers import load_css
+from app.utils.helpers import load_css, render_header
 from app.utils.formatting import Formatter
 
 
@@ -22,8 +22,7 @@ Sidebar.render()
 
 service = DashboardService()
 
-st.title("📊 Executive Dashboard")
-st.caption("High-level overview of the business.")
+render_header("📊 Executive Dashboard", "High-level overview of the business.")
 st.divider()
 
 # Wrapped in spinner and try-except error boundary
