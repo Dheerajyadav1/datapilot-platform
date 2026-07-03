@@ -16,6 +16,8 @@ class MetadataTool(BaseTool):
 
     description = "Read warehouse metadata."
 
+    _cached_metadata = None
+
     def __init__(self):
 
         self.inspector = inspect(
@@ -23,6 +25,9 @@ class MetadataTool(BaseTool):
         )
 
     def execute(self):
+
+        if MetadataTool._cached_metadata is not None:
+            return MetadataTool._cached_metadata
 
         metadata = {}
 
@@ -49,6 +54,7 @@ class MetadataTool(BaseTool):
 
                 continue
 
+        MetadataTool._cached_metadata = metadata
         return metadata
 
     def get_columns(
