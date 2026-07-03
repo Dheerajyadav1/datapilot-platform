@@ -14,10 +14,10 @@ class Sidebar:
                 width=80,
             )
 
-            st.title("Agentic Data Platform")
+            st.title("DataPilot")
 
             st.caption(
-                "Modern Data Engineering Platform"
+                "AI-Powered Data Engineering Platform"
             )
 
             st.divider()

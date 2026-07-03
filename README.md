@@ -1,4 +1,4 @@
-# 🚀 Agentic Data Platform (ADP)
+# 🚀 DataPilot
 
 [![Python 3.11+](https://img.shields.io/badge/Python-3.11%2B-blue.svg?logo=python&logoColor=white)](https://www.python.org/)
 [![PostgreSQL 15](https://img.shields.io/badge/PostgreSQL-15-blue?logo=postgresql&logoColor=white)](https://www.postgresql.org/)
@@ -120,7 +120,7 @@ agentic-data-platform/
 
 ## ⚙️ Medallion Schema Architecture
 
-ADP uses a standard four-tier Medallion architecture to ingest, clean, and model Brazilian E-commerce (`Olist`) and weather data:
+DataPilot uses a standard four-tier Medallion architecture to ingest, clean, and model Brazilian E-commerce (`Olist`) and weather data:
 
 1. **Bronze Layer (`gold.bronze_*`)**:
    * Appends raw, untouched records directly from CSV files and the Open-Meteo REST API.
@@ -140,7 +140,7 @@ ADP uses a standard four-tier Medallion architecture to ingest, clean, and model
 
 ## 🤖 Agentic AI Framework
 
-Milestone 9 integrates a comprehensive, modular Agentic Framework into the data platform. Instead of a single massive prompt,ADP uses a routed, multi-agent orchestrator:
+Milestone 9 integrates a comprehensive, modular Agentic Framework into the data platform. Instead of a single massive prompt,DataPilot uses a routed, multi-agent orchestrator:
 
 * **Intent Routing**: The orchestrator (`AgentOrchestrator`) analyzes incoming natural language questions and routes them to target agents.
 * **SQL Agent**:

@@ -1,4 +1,4 @@
-agentic_data_platform:
+datapilot_platform:
   target: dev
 
   outputs:

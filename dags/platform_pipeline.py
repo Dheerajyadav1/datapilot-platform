@@ -17,8 +17,8 @@ default_args = {
 
 
 with DAG(
-    dag_id="agentic_data_platform",
-    description="End-to-End Agentic Data Platform",
+    dag_id="datapilot_platform",
+    description="End-to-End DataPilot Platform",
     start_date=datetime(2026, 6, 1),
     schedule="@hourly",
     catchup=False,

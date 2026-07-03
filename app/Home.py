@@ -26,14 +26,14 @@ Sidebar.render()
 service = DashboardService()
 
 # Title and Header Card
-render_header("🚀 Agentic Data Platform", "Modern End-to-End Data Engineering Platform")
+render_header("🚀 DataPilot", "AI-Powered End-to-End Data Engineering Platform")
 st.divider()
 
 # Project Overview Card
 st.markdown("""
 ### 📝 Project Overview
 
-The **Agentic Data Platform** is an end-to-end modern data engineering solution that ingests raw data, transforms it through Bronze, Silver, and Gold layers, orchestrates workflows with Apache Airflow, models data using dbt, and presents interactive analytics through Streamlit.
+The **DataPilot** is an end-to-end modern data engineering solution that ingests raw data, transforms it through Bronze, Silver, and Gold layers, orchestrates workflows with Apache Airflow, models data using dbt, and presents interactive analytics through Streamlit.
 
 It utilizes modern dimensional modeling practices to construct a star schema, enabling lightning-fast analytical query execution while maintaining strict constraints checks.
 """)

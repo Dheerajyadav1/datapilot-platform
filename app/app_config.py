@@ -9,7 +9,7 @@ class AppConfig:
 
         self.project_root = Path(__file__).resolve().parents[1]
 
-        self.page_title = "Agentic Data Platform"
+        self.page_title = "DataPilot"
 
         self.page_icon = "🚀"
 

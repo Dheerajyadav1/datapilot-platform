@@ -58,7 +58,7 @@ class Settings:
     # Application
     # --------------------------------------------------
 
-    APP_NAME = "Agentic Data Platform"
+    APP_NAME = "DataPilot"
 
     APP_VERSION = "1.0.0"
 

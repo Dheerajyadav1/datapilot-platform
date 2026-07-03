@@ -1,6 +1,6 @@
 # PostgreSQL Initialization
 
-This directory contains the PostgreSQL initialization scripts for the **Agentic Data Platform**.
+This directory contains the PostgreSQL initialization scripts for the **DataPilot** platform.
 
 When the PostgreSQL container is started **for the first time** (i.e., when no existing database volume is present), Docker automatically executes every SQL file inside the `init/` directory in **alphabetical order**.
 

@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 
 class Config:
     """
-    Central configuration manager for the Agentic Data Platform.
+    Central configuration manager for the DataPilot Platform.
     """
 
     def __init__(self):

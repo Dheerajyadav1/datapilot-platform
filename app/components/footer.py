@@ -9,5 +9,5 @@ class Footer:
         st.divider()
 
         st.caption(
-            "© 2026 Agentic Data Platform | Built using Python • PostgreSQL • Docker • Airflow • dbt • Streamlit"
+            "© 2026 DataPilot | Built using Python • PostgreSQL • Docker • Airflow • dbt • Streamlit"
         )

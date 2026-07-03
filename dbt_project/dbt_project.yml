@@ -1,8 +1,8 @@
-name: "agentic_data_platform"
+name: "datapilot_platform"
 version: "1.0.0"
 config-version: 2
 
-profile: "agentic_data_platform"
+profile: "datapilot_platform"
 
 model-paths: ["models"]
 analysis-paths: ["analyses"]
@@ -17,7 +17,7 @@ clean-targets:
 
 models:
 
-  agentic_data_platform:
+  datapilot_platform:
 
     staging:
       +materialized: view
