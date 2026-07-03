@@ -4,666 +4,517 @@
 
 ### Intelligent Data Engineering & Analytics Platform
 
-**From Raw Data to Intelligent Decisions.**
+**From Raw Data to Intelligent Decisions**
 
-*An end-to-end Modern Data Stack that combines Data Engineering, Business Intelligence, and Agentic AI into a unified analytics platform.*
+*An end-to-end Modern Data Stack that combines Data Engineering, Analytics Engineering, Business Intelligence, and Agentic AI into a single intelligent analytics platform.*
 
 <br>
 
-<!-- Replace with your banner -->
-<img src="assets/banners/github-banner.png" alt="DataPilot Banner" width="100%"/>
+<p align="center">
+<img src="assets/banners/github-banner.png" width="100%">
+</p>
 
-<br><br>
+<br>
 
 ![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-17-336791?style=for-the-badge&logo=postgresql&logoColor=white)
 ![Apache Airflow](https://img.shields.io/badge/Apache%20Airflow-2.10-C0171D?style=for-the-badge&logo=apacheairflow&logoColor=white)
 ![dbt](https://img.shields.io/badge/dbt-Core-FF694B?style=for-the-badge&logo=dbt&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-17-336791?style=for-the-badge&logo=postgresql&logoColor=white)
 ![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-![Google Gemini](https://img.shields.io/badge/Gemini-AI-4285F4?style=for-the-badge&logo=google&logoColor=white)
+![Gemini](https://img.shields.io/badge/Google-Gemini-4285F4?style=for-the-badge&logo=google&logoColor=white)
 
 <br>
 
-![Status](https://img.shields.io/badge/Status-Active-success?style=flat-square)
-![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)
-![Made With Love](https://img.shields.io/badge/Made%20with-❤️-red?style=flat-square)
+![Status](https://img.shields.io/badge/Status-Active-success)
+![License](https://img.shields.io/badge/License-MIT-blue)
+![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen)
+![Made With Love](https://img.shields.io/badge/Made%20With-❤️-red)
 
 </div>
 
-## 📖 Overview
+---
 
-Modern organizations generate massive volumes of data every day, but transforming that data into reliable, actionable insights requires much more than dashboards. It demands scalable data pipelines, robust transformation workflows, reliable data quality checks, and intelligent analytics that enable both technical and non-technical users to make informed decisions.
+## 📌 Table of Contents
 
-**DataPilot** is a production-inspired **Intelligent Data Engineering & Analytics Platform** that brings together the complete modern data lifecycle into a single, integrated ecosystem. The platform automates data ingestion, orchestrates ETL workflows using **Apache Airflow**, transforms raw data into analytics-ready datasets with **dbt** following the **Medallion Architecture (Bronze → Silver → Gold)**, stores curated data in a **PostgreSQL Data Warehouse**, and delivers interactive business dashboards through **Streamlit**.
-
-What differentiates DataPilot from a traditional analytics platform is its **Agentic AI Framework**. Instead of relying solely on dashboards and predefined SQL queries, DataPilot enables users to interact with their data using natural language. A multi-agent orchestration layer intelligently routes requests to specialized AI agents capable of generating SQL queries, performing business analysis, retrieving project knowledge using Retrieval-Augmented Generation (RAG), monitoring pipeline health, and generating executive business reports.
-
-By combining modern data engineering practices with intelligent AI agents, DataPilot demonstrates how organizations can move beyond static reporting toward an autonomous analytics platform that assists users throughout the entire decision-making process—from raw data ingestion to AI-powered business intelligence.
+- [Overview](#-overview)
+- [Why DataPilot](#-why-datapilot)
+- [Key Features](#-key-features)
+- [Technology Stack](#-technology-stack)
+- [Project Highlights](#-project-highlights)
 
 ---
 
-### 🎯 Project Objectives
+# 📖 Overview
 
-DataPilot was designed with the following goals:
+Modern organizations rely on data to drive business decisions, yet building a complete analytics platform often requires combining multiple technologies for ingestion, orchestration, transformation, warehousing, visualization, and intelligence.
 
-- Build a production-inspired Modern Data Stack using industry-standard technologies.
-- Implement the Medallion Architecture for scalable and maintainable data warehousing.
-- Automate data ingestion, transformation, and orchestration workflows.
-- Deliver interactive dashboards for business stakeholders.
-- Integrate Agentic AI to enable natural language analytics and intelligent decision support.
-- Demonstrate best practices in Data Engineering, Analytics Engineering, and AI system design within a single unified platform.
+**DataPilot** brings these capabilities together into a single production-inspired platform.
 
-## 💡 Why DataPilot?
+It automates the complete data lifecycle—from raw data ingestion to AI-powered business insights—using a modern data stack built around **Apache Airflow**, **dbt**, **PostgreSQL**, **Streamlit**, and a custom **Multi-Agent AI Framework** powered by **Google Gemini**.
 
-Over the past decade, organizations have invested heavily in building modern data platforms. Technologies like **Apache Airflow**, **dbt**, **PostgreSQL**, and **Streamlit** have significantly improved how data is ingested, transformed, and visualized. However, one challenge still remains:
+Unlike traditional dashboard-driven analytics platforms, DataPilot enables users to interact with their data using **natural language**, allowing business users and engineers to retrieve insights, generate SQL, monitor pipelines, access project knowledge, and create executive reports without manually navigating multiple tools.
 
-> **Accessing insights often requires technical expertise.**
+The platform demonstrates how modern **Data Engineering**, **Analytics Engineering**, and **Agentic AI** can work together to create intelligent decision-support systems.
 
-Business users frequently depend on data teams to write SQL queries, investigate pipeline failures, explain data models, or generate executive reports. This creates bottlenecks that slow down decision-making and reduce the accessibility of data across an organization.
+---
 
-DataPilot was built to bridge this gap by combining the **Modern Data Stack** with **Agentic AI**.
+# 💡 Why DataPilot?
 
-Instead of treating Artificial Intelligence as a standalone chatbot, DataPilot integrates AI directly into the data platform through a multi-agent architecture. Each agent is responsible for a specialized task—query generation, business analytics, knowledge retrieval, pipeline monitoring, or executive reporting—working together to provide intelligent, context-aware assistance.
+Most analytics projects stop after building dashboards.
 
-This approach transforms the platform from a traditional dashboard into an intelligent data companion capable of helping users understand, analyze, and interact with data using natural language.
+DataPilot goes several steps further.
 
-### 🚀 What Makes DataPilot Different?
+It demonstrates how a modern data platform can evolve into an **AI-native analytics ecosystem** where intelligent agents collaborate to automate analytical workflows, simplify data access, and assist users throughout the decision-making process.
 
-Unlike conventional analytics projects that stop after building dashboards, DataPilot demonstrates how modern data engineering and AI can work together within a single platform.
+Instead of asking users to learn SQL or understand database schemas, DataPilot enables them to simply ask questions such as:
 
-Key differentiators include:
+> *"Show the top 10 customers by revenue."*
 
-- 🤖 **Agentic AI Framework** that intelligently routes user requests to specialized AI agents.
-- 🏗️ **Production-inspired Modern Data Stack** following industry best practices.
-- 📦 **Medallion Architecture** for scalable and maintainable data warehousing.
-- ⚙️ **Automated orchestration** using Apache Airflow.
-- 📈 **Analytics-ready transformations** powered by dbt.
-- 💬 **Natural Language to SQL** for intuitive data exploration.
-- 📚 **Retrieval-Augmented Generation (RAG)** for project-aware knowledge retrieval.
-- 🔍 **Pipeline monitoring and diagnostics** through AI-assisted operational insights.
-- 📊 **Interactive dashboards** delivering business intelligence across multiple domains.
+> *"Generate this month's executive sales report."*
 
-DataPilot is not just a dashboard, an ETL pipeline, or an AI assistant—it is a unified platform that demonstrates how modern data engineering, analytics engineering, and generative AI can be combined to build intelligent decision-support systems.
+> *"Is my Airflow pipeline healthy?"*
 
-## ✨ Key Features
+> *"Explain the Medallion Architecture used in this project."*
 
-DataPilot combines the capabilities of a modern data platform with the intelligence of autonomous AI agents, providing an end-to-end ecosystem for data engineering, analytics, and decision support.
+The platform automatically determines the user's intent, routes the request to the appropriate AI agent, gathers the required information, and produces a context-aware response.
+
+This combination of modern data engineering and autonomous AI makes DataPilot more than a dashboard—it becomes an intelligent analytics assistant.
+
+---
+
+# ✨ Key Features
 
 ### 🏗️ Modern Data Engineering
 
-Build reliable, scalable, and production-inspired data pipelines.
-
-| Feature | Description |
-|----------|-------------|
-| **Automated Data Ingestion** | Collects data from multiple sources including CSV files and external APIs. |
-| **Medallion Architecture** | Organizes data into Bronze, Silver, and Gold layers for maintainability and scalability. |
-| **PostgreSQL Data Warehouse** | Centralized analytical database optimized for reporting and business intelligence. |
-| **Apache Airflow Orchestration** | Schedules and automates end-to-end ETL workflows. |
-| **Incremental Data Processing** | Efficiently processes new data without rebuilding the entire warehouse. |
-| **Dockerized Infrastructure** | Fully containerized environment for consistent deployment and development. |
-
----
-
-### ⚙️ Analytics Engineering
-
-Transform raw data into reliable, analytics-ready datasets.
-
-| Feature | Description |
-|----------|-------------|
-| **dbt Models** | Modular SQL transformations following analytics engineering best practices. |
-| **Data Quality Tests** | Built-in schema, uniqueness, relationship, and integrity validations. |
-| **Reusable Data Models** | Clean and maintainable transformation logic for long-term scalability. |
-| **Analytics-Ready Gold Layer** | Curated datasets optimized for dashboards and AI-driven analytics. |
+- Automated Data Ingestion Pipelines
+- Medallion Architecture (Bronze → Silver → Gold)
+- PostgreSQL Data Warehouse
+- Apache Airflow Workflow Orchestration
+- dbt Transformations & Testing
+- Incremental Data Processing
+- Dockerized Infrastructure
 
 ---
 
 ### 📊 Business Intelligence
 
-Deliver meaningful insights through interactive dashboards.
-
-| Dashboard | Description |
-|-----------|-------------|
-| 📈 Executive Dashboard | High-level KPIs and business overview. |
-| 💰 Sales Analytics | Revenue trends, sales performance, and profitability analysis. |
-| 👥 Customer Analytics | Customer segmentation, purchasing behavior, and lifetime value analysis. |
-| 📦 Product Analytics | Product performance, inventory insights, and category analysis. |
-| 🛍️ Seller Analytics | Seller performance and marketplace evaluation. |
-| 🌦️ Weather Analytics | Weather-based business insights and external factor analysis. |
-| ✅ Data Quality Dashboard | Warehouse health, validation results, and data quality metrics. |
-
----
-
-### 🤖 Agentic AI Framework
-
-An intelligent multi-agent ecosystem that enables natural language interaction with the platform.
-
-| Agent | Responsibility |
-|--------|---------------|
-| 🧠 **Planner** | Understands user intent and determines the optimal execution plan. |
-| 💻 **SQL Agent** | Converts natural language into optimized PostgreSQL queries. |
-| 📊 **Analytics Agent** | Generates business insights, trend analysis, and actionable recommendations. |
-| 📚 **Knowledge Agent** | Uses Retrieval-Augmented Generation (RAG) to answer project and documentation-related questions. |
-| ⚙️ **Pipeline Agent** | Monitors Airflow, dbt, Docker, and pipeline health. |
-| 📄 **Report Agent** | Produces executive-level business reports and summaries. |
-
----
-
-### 🚀 AI Capabilities
-
-Empower users to interact with data using natural language.
-
-- 💬 Natural Language to SQL
-- 📈 Automated Business Insights
-- 📄 Executive Report Generation
-- 📚 Retrieval-Augmented Generation (RAG)
-- 🔍 Intelligent Pipeline Monitoring
-- 🤖 Multi-Agent Collaboration
-- 🧠 Context-Aware Query Routing
-- ⚡ AI-Assisted Decision Support
-
----
-
-### 🔒 Platform Reliability
-
-Designed with production-inspired engineering practices.
-
-- Containerized deployment using Docker
-- Modular and scalable architecture
-- Separation of concerns across platform components
-- Centralized configuration management
-- Reusable service and repository layers
-- Structured logging and monitoring
-- Extensible AI agent framework
-
-# 🏛️ System Architecture
-
-DataPilot follows a modern, layered architecture that separates data ingestion, transformation, analytics, visualization, and AI into independent yet interconnected components. This modular design improves scalability, maintainability, and extensibility while allowing each layer to evolve independently.
-
-```mermaid
-flowchart LR
-
-    subgraph Sources
-        A1[CSV Datasets]
-        A2[Weather API]
-    end
-
-    subgraph Ingestion
-        B[Python ETL Pipeline]
-    end
-
-    subgraph Warehouse
-        C[(Bronze Layer)]
-        D[(Silver Layer)]
-        E[(Gold Layer)]
-    end
-
-    subgraph Transformation
-        F[dbt Models]
-        G[dbt Tests]
-    end
-
-    subgraph Analytics
-        H[(PostgreSQL Warehouse)]
-    end
-
-    subgraph Visualization
-        I[Streamlit Dashboard]
-    end
-
-    subgraph Agentic_AI
-        J[Planner]
-        K[SQL Agent]
-        L[Analytics Agent]
-        M[Knowledge Agent]
-        N[Pipeline Agent]
-        O[Report Agent]
-    end
-
-    subgraph Knowledge
-        P[FAISS Vector Store]
-    end
-
-    subgraph Orchestration
-        Q[Apache Airflow]
-    end
-
-    A1 --> B
-    A2 --> B
-
-    B --> C
-    C --> D
-    D --> E
-
-    E --> F
-    F --> G
-    G --> H
-
-    H --> I
-
-    H --> K
-    H --> L
-
-    M --> P
-
-    N --> Q
-    N --> F
-
-    J --> K
-    J --> L
-    J --> M
-    J --> N
-    J --> O
-
-    L --> O
-```
-
----
-
-## 🏗️ Architecture Overview
-
-DataPilot is organized into six major layers:
-
-| Layer | Responsibility |
-|--------|----------------|
-| **Data Sources** | Collects structured data from CSV datasets and external APIs. |
-| **Ingestion Layer** | Automates extraction, validation, and loading into the warehouse. |
-| **Data Warehouse** | Implements the Medallion Architecture (Bronze → Silver → Gold). |
-| **Transformation Layer** | Uses dbt to clean, model, validate, and document datasets. |
-| **Analytics Layer** | Stores analytics-ready data inside PostgreSQL for dashboards and AI. |
-| **Presentation Layer** | Delivers interactive dashboards and AI-powered business insights. |
-
-The modular architecture ensures that every component—from ingestion to AI—can evolve independently while remaining part of a unified analytics platform.
-
-# 🥉 Medallion Architecture
-
-DataPilot follows the **Medallion Architecture**, a layered data engineering approach that progressively improves data quality and prepares datasets for analytics and decision-making.
-
-```mermaid
-flowchart LR
-
-Raw[Raw Data Sources]
-
-Raw --> Bronze
-
-Bronze --> Silver
-
-Silver --> Gold
-
-Bronze[(Bronze Layer)]
-
-Silver[(Silver Layer)]
-
-Gold[(Gold Layer)]
-
-Bronze -->|Raw Data| Silver
-
-Silver -->|Clean & Standardized| Gold
-
-Gold -->|Business Ready| Dashboard[Dashboards]
-
-Gold --> AI[AI Assistant]
-```
-
-### Bronze Layer
-
-The Bronze layer stores raw ingested data with minimal transformation. It serves as the immutable source of truth and preserves historical records.
-
-### Silver Layer
-
-The Silver layer cleans, validates, standardizes, and enriches the raw data. Duplicate records, inconsistent values, and missing information are handled during this stage.
-
-### Gold Layer
-
-The Gold layer contains business-ready datasets optimized for reporting, dashboarding, AI agents, and downstream analytics.
-
-# ⚙️ End-to-End Data Pipeline Workflow
-
-DataPilot automates the complete journey of data—from ingestion to AI-powered business intelligence. Every stage of the pipeline is designed to ensure data quality, reliability, and scalability while minimizing manual intervention.
-
-```mermaid
-flowchart LR
-
-    A[📂 CSV Files]
-    B[🌐 Weather API]
-
-    A --> C[Python Ingestion]
-    B --> C
-
-    C --> D[(Bronze Layer)]
-
-    D --> E[Data Cleaning & Validation]
-
-    E --> F[(Silver Layer)]
-
-    F --> G[dbt Transformations]
-
-    G --> H[(Gold Layer)]
-
-    H --> I[(PostgreSQL Warehouse)]
-
-    I --> J[📊 Streamlit Dashboard]
-
-    I --> K[🤖 AI Assistant]
-
-    K --> L[Business Insights]
-```
-
----
-
-## 🔄 Workflow Overview
-
-The DataPilot pipeline follows a structured workflow that transforms raw datasets into analytics-ready information while maintaining data integrity throughout every stage.
-
-### 1️⃣ Data Ingestion
-
-The platform ingests data from multiple sources, including structured CSV datasets and external APIs such as weather services. Python-based ETL pipelines validate incoming records before loading them into the warehouse.
-
-**Responsibilities**
-
-- Read raw datasets
-- Fetch external API data
-- Validate incoming records
-- Handle missing or invalid values
-- Load raw data into the Bronze layer
-
----
-
-### 2️⃣ Bronze Layer
-
-The Bronze layer stores data in its original format with minimal transformation. This layer serves as the immutable source of truth and preserves historical information for auditing and recovery purposes.
-
----
-
-### 3️⃣ Silver Layer
-
-Data is cleaned, standardized, enriched, and validated before moving to the Silver layer.
-
-Typical operations include:
-
-- Removing duplicates
-- Standardizing data formats
-- Handling null values
-- Type conversions
-- Data enrichment
-- Basic business validations
-
----
-
-### 4️⃣ Gold Layer
-
-The Gold layer contains business-ready datasets specifically designed for analytics, reporting, dashboards, and AI applications.
-
-Examples include:
-
-- Sales fact tables
-- Customer dimensions
-- Product dimensions
-- Seller dimensions
-- Weather analytics
-- Executive KPIs
-
----
-
-### 5️⃣ dbt Transformations
-
-dbt transforms curated warehouse data into reusable analytical models while ensuring quality through automated testing.
-
-DataPilot uses dbt for:
-
-- SQL model development
-- Incremental transformations
-- Data quality validation
-- Schema testing
-- Documentation generation
-- Dependency management
-
----
-
-### 6️⃣ Apache Airflow Orchestration
-
-Apache Airflow orchestrates the complete data pipeline by scheduling and monitoring every stage of the workflow.
-
-Responsibilities include:
-
-- Pipeline scheduling
-- Task dependencies
-- Retry handling
-- Failure monitoring
-- Logging
-- Workflow automation
-
----
-
-### 7️⃣ PostgreSQL Analytics Warehouse
-
-The transformed Gold-layer datasets are stored in PostgreSQL, serving as the central analytical repository for dashboards and AI agents.
-
-This warehouse powers:
-
-- Executive dashboards
-- Business analytics
-- SQL Agent
-- Analytics Agent
-- Report Agent
-
----
-
-### 8️⃣ Streamlit Dashboard
-
-Business users interact with curated datasets through an intuitive dashboard offering:
-
-- Executive KPIs
+- Executive Dashboard
 - Sales Analytics
 - Customer Analytics
 - Product Analytics
 - Seller Analytics
 - Weather Analytics
-- Data Quality Monitoring
+- Data Quality Dashboard
 
 ---
 
-### 9️⃣ AI-Powered Decision Support
+### 🤖 Agentic AI
 
-The same analytics-ready warehouse is leveraged by DataPilot's Agentic AI Framework, enabling users to ask questions in natural language instead of writing SQL manually.
-
-The AI assistant can:
-
-- Generate SQL queries
-- Analyze business performance
-- Explain project architecture
-- Monitor pipeline health
-- Produce executive reports
-
-This creates a unified platform where traditional business intelligence and generative AI work together to accelerate data-driven decision-making.
-
-# 🤖 Multi-Agent AI Architecture
-
-One of the defining capabilities of **DataPilot** is its **Agentic AI Framework**, a modular, multi-agent system that enables users to interact with the platform using natural language.
-
-Instead of relying on a single Large Language Model (LLM) for every task, DataPilot adopts a **specialized agent architecture** where each agent is responsible for solving a specific problem. An intelligent planner analyzes the user's request, determines the appropriate execution strategy, and orchestrates the collaboration between multiple agents when required.
-
-This design improves scalability, maintainability, and allows each agent to evolve independently while sharing a common execution context.
+- Multi-Agent Orchestration
+- Natural Language to SQL
+- Business Analytics Agent
+- Knowledge Agent (RAG)
+- Pipeline Monitoring Agent
+- Executive Report Generation
+- Shared Agent Context
+- Dynamic Request Routing
 
 ---
 
-## 🧠 Agent Orchestration Workflow
+### ⚙️ Platform Capabilities
+
+- End-to-End Data Pipeline
+- AI-Powered Analytics
+- Interactive Dashboards
+- Automated Workflow Scheduling
+- Intelligent Pipeline Monitoring
+- Retrieval-Augmented Generation
+- Context-Aware AI Responses
+- Modular & Extensible Architecture
+
+---
+
+# 🛠️ Technology Stack
+
+| Category | Technologies |
+|-----------|--------------|
+| **Programming Language** | Python 3.11 |
+| **Data Warehouse** | PostgreSQL |
+| **Workflow Orchestration** | Apache Airflow |
+| **Transformation Layer** | dbt Core |
+| **Business Intelligence** | Streamlit + Plotly |
+| **Artificial Intelligence** | Google Gemini |
+| **Vector Database** | FAISS |
+| **Data Processing** | Pandas, NumPy |
+| **Database Toolkit** | SQLAlchemy |
+| **Containerization** | Docker & Docker Compose |
+| **API Integration** | Requests, HTTPX |
+
+---
+
+# 🚀 Project Highlights
+
+<table>
+<tr>
+
+<td align="center" width="25%">
+
+### 🏗️
+
+**Modern Data Stack**
+
+Production-inspired architecture using Airflow, dbt, PostgreSQL, and Docker.
+
+</td>
+
+<td align="center" width="25%">
+
+### 🤖
+
+**Agentic AI**
+
+A multi-agent framework capable of SQL generation, analytics, RAG, reporting, and pipeline monitoring.
+
+</td>
+
+<td align="center" width="25%">
+
+### 📊
+
+**Business Intelligence**
+
+Interactive dashboards delivering actionable insights across multiple business domains.
+
+</td>
+
+<td align="center" width="25%">
+
+### 🚀
+
+**Scalable Design**
+
+Modular architecture designed for extensibility, maintainability, and future cloud deployment.
+
+</td>
+
+</tr>
+</table>
+
+---
+
+# 🏛️ Architecture & Engineering
+
+DataPilot is designed as a modular, production-inspired data platform where every layer has a single responsibility. The platform separates data ingestion, transformation, analytics, visualization, and AI into independent components, making it scalable, maintainable, and easy to extend.
+
+---
+
+# 🏗️ High-Level System Architecture
 
 ```mermaid
 flowchart LR
 
-    User["👤 User"]
+subgraph Sources
+A[📂 CSV Datasets]
+B[🌐 Weather API]
+end
 
-    Planner["🧠 Planner"]
+subgraph Data_Engineering
+C[Python ETL Pipeline]
+D[(Bronze)]
+E[(Silver)]
+F[(Gold)]
+end
 
-    Context["📦 Shared Context"]
+subgraph Analytics
+G[dbt Models]
+H[(PostgreSQL Warehouse)]
+end
 
-    SQL["💻 SQL Agent"]
+subgraph Presentation
+I[📊 Streamlit Dashboard]
+end
 
-    Analytics["📊 Analytics Agent"]
+subgraph AI
+J[🤖 AI Assistant]
+K[Planner]
+L[SQL Agent]
+M[Analytics Agent]
+N[Knowledge Agent]
+O[Pipeline Agent]
+P[Report Agent]
+end
 
-    Knowledge["📚 Knowledge Agent"]
+A --> C
+B --> C
 
-    Pipeline["⚙️ Pipeline Agent"]
+C --> D
+D --> E
+E --> F
 
-    Report["📄 Report Agent"]
+F --> G
+G --> H
 
-    PostgreSQL["🐘 PostgreSQL"]
+H --> I
 
-    FAISS["🧠 FAISS"]
+J --> K
 
-    Airflow["🌪️ Airflow"]
+K --> L
+K --> M
+K --> N
+K --> O
+K --> P
 
-    dbt["🔷 dbt"]
-
-    User --> Planner
-
-    Planner --> Context
-
-    Context --> SQL
-    Context --> Analytics
-    Context --> Knowledge
-    Context --> Pipeline
-    Context --> Report
-
-    SQL --> PostgreSQL
-
-    Analytics --> PostgreSQL
-
-    Knowledge --> FAISS
-
-    Pipeline --> Airflow
-    Pipeline --> dbt
-
-    SQL --> Context
-    Analytics --> Context
-    Knowledge --> Context
-    Pipeline --> Context
-    Report --> Context
-
-    Context --> User
+L --> H
+M --> H
+N --> RAG
+O --> Airflow
+P --> H
 ```
 
 ---
 
-## 🏗️ Agent Responsibilities
+# ⚙️ Data Pipeline
+
+Every dataset follows a structured journey before becoming available for analytics and AI.
+
+```mermaid
+flowchart LR
+
+A[Raw Data]
+
+--> B[Python Ingestion]
+
+--> C[Bronze Layer]
+
+--> D[Silver Layer]
+
+--> E[Gold Layer]
+
+--> F[dbt Models]
+
+--> G[PostgreSQL]
+
+--> H[Dashboards]
+
+--> I[AI Assistant]
+```
+
+### Pipeline Stages
+
+| Stage | Purpose |
+|--------|---------|
+| **Ingestion** | Collects data from CSV files and external APIs |
+| **Bronze** | Stores raw, immutable source data |
+| **Silver** | Cleans, validates, and standardizes data |
+| **Gold** | Creates analytics-ready datasets |
+| **dbt** | Applies business transformations and quality tests |
+| **Warehouse** | Stores curated datasets inside PostgreSQL |
+| **Presentation** | Serves dashboards and AI agents |
+
+---
+
+# 🥉 Medallion Architecture
+
+DataPilot follows the **Bronze → Silver → Gold** architecture to progressively improve data quality.
+
+```text
+Raw Sources
+     │
+     ▼
+ Bronze
+     │
+     ▼
+ Silver
+     │
+     ▼
+  Gold
+     │
+     ├────────► Dashboards
+     │
+     └────────► AI Assistant
+```
+
+| Layer | Responsibility |
+|--------|---------------|
+| 🥉 Bronze | Raw ingested data with minimal transformation |
+| 🥈 Silver | Cleaned, standardized, validated datasets |
+| 🥇 Gold | Business-ready analytical models |
+
+This layered design improves maintainability, enables reproducibility, and preserves historical data.
+
+---
+
+# 🤖 Multi-Agent AI Architecture
+
+Unlike traditional AI applications that rely on a single LLM, DataPilot uses a **Planner-based Multi-Agent Architecture**.
+
+Each agent is responsible for a specialized task while sharing a common execution context.
+
+```mermaid
+flowchart TD
+
+User
+
+↓
+
+Planner
+
+↓
+
+SQL Agent
+
+Analytics Agent
+
+Knowledge Agent
+
+Pipeline Agent
+
+Report Agent
+
+↓
+
+Shared Context
+
+↓
+
+Final Response
+```
+
+---
+
+## AI Agent Responsibilities
 
 | Agent | Responsibility |
 |--------|---------------|
-| 🧠 **Planner** | Understands user intent and creates an execution plan. |
-| 💻 **SQL Agent** | Converts natural language into optimized PostgreSQL queries and executes them. |
-| 📊 **Analytics Agent** | Generates business insights, identifies trends, and provides actionable recommendations. |
-| 📚 **Knowledge Agent** | Retrieves project knowledge using Retrieval-Augmented Generation (RAG). |
-| ⚙️ **Pipeline Agent** | Monitors Airflow, dbt, Docker, and overall pipeline health. |
-| 📄 **Report Agent** | Produces executive summaries and professional business reports. |
+| 🧠 Planner | Determines user intent and selects the appropriate execution strategy |
+| 💻 SQL Agent | Converts natural language into optimized SQL queries |
+| 📊 Analytics Agent | Performs business analysis and generates insights |
+| 📚 Knowledge Agent | Retrieves project-specific information using RAG |
+| ⚙️ Pipeline Agent | Monitors Airflow, dbt, and pipeline health |
+| 📄 Report Agent | Produces executive business reports |
 
 ---
 
-## 📦 Shared Execution Context
+# 🔄 Request Lifecycle
 
-Instead of passing information directly between agents, DataPilot uses a centralized **Agent Context**.
-
-The context acts as shared memory throughout the execution lifecycle and stores:
-
-- User question
-- Execution plan
-- Generated SQL
-- Query results
-- Business insights
-- Recommendations
-- Pipeline status
-- Retrieved knowledge
-- Execution trace
-- Final response
-
-This enables multiple agents to collaborate without creating tight dependencies between them.
-
----
-
-## 🔄 Execution Lifecycle
-
-Every request follows a structured workflow:
+Every user request follows a structured execution pipeline.
 
 ```text
-User Query
-      │
-      ▼
+User Request
+
+↓
+
 Planner
-      │
-      ▼
-Execution Plan
-      │
-      ▼
-Relevant Agent(s)
-      │
-      ▼
-Tools & Data Sources
-      │
-      ▼
-Shared Context Update
-      │
-      ▼
+
+↓
+
+Relevant AI Agent(s)
+
+↓
+
+PostgreSQL / Airflow / FAISS
+
+↓
+
+Shared Context
+
+↓
+
 Final AI Response
 ```
 
-For example, when a user asks:
-
-> *"Generate an executive report showing the top-performing customers."*
-
-The platform executes the following sequence:
-
-1. The **Planner** classifies the request as a reporting task.
-2. The **SQL Agent** generates and executes the required SQL query.
-3. The **Analytics Agent** analyzes the returned dataset and extracts business insights.
-4. The **Report Agent** converts those insights into a professional executive report.
-5. The final response is returned to the user through the AI Assistant.
-
-This collaborative workflow enables DataPilot to solve complex tasks by combining the strengths of multiple specialized agents.
+This orchestration layer allows multiple AI agents to collaborate while remaining independent and reusable.
 
 ---
 
-## 🔧 Agent Tooling
+# 📂 Project Structure
 
-Agents interact with the platform through a reusable tool layer rather than directly accessing external systems.
+```text
+DataPilot/
 
-Current tools include:
+├── agents/                 # Multi-Agent AI Framework
 
-| Tool | Purpose |
-|------|---------|
-| 🐘 Database Tool | Execute SQL queries against PostgreSQL. |
-| 🗂️ Metadata Tool | Retrieve warehouse schemas and metadata. |
-| 📊 Chart Tool | Generate interactive Plotly visualizations. |
-| 🌦️ Weather Tool | Access external weather information. |
-| ⚙️ Pipeline Tool | Monitor Airflow, dbt, and pipeline health. |
+├── app/                    # Streamlit Dashboard
 
-This abstraction keeps agent logic clean while making the framework extensible for future integrations.
+├── config/                 # Configuration
+
+├── dags/                   # Airflow DAGs
+
+├── dbt_project/            # dbt Models & Tests
+
+├── docker/                 # Docker Configuration
+
+├── docs/                   # Project Documentation
+
+├── ingestion/              # Data Ingestion
+
+├── warehouse/              # Warehouse Pipeline
+
+├── tests/                  # Unit Tests
+
+├── requirements.txt
+
+├── docker-compose.yml
+
+└── README.md
+```
 
 ---
 
-## 🚀 Why a Multi-Agent Architecture?
+# ⚡ Engineering Decisions
 
-A single AI model can answer many questions, but specialized agents offer significant advantages for complex analytical workflows.
+Building DataPilot involved selecting technologies based on scalability, maintainability, and production best practices.
 
-DataPilot's multi-agent design provides:
+| Technology | Why It Was Chosen |
+|------------|-------------------|
+| **PostgreSQL** | Reliable analytical database with excellent SQL support |
+| **Apache Airflow** | Workflow orchestration and scheduling |
+| **dbt** | Modular SQL transformations with built-in testing |
+| **Docker** | Reproducible development and deployment environments |
+| **Streamlit** | Rapid development of interactive BI applications |
+| **FAISS** | Efficient vector similarity search for RAG |
+| **Google Gemini** | Natural language reasoning and agent execution |
 
-- **Modularity** — Each agent has a single responsibility.
-- **Scalability** — New agents can be added without changing existing ones.
-- **Maintainability** — Independent components simplify development and testing.
-- **Reusability** — Agents share common infrastructure through the orchestration layer.
-- **Extensibility** — New tools and capabilities can be integrated with minimal effort.
-- **Intelligence** — Multiple agents can collaborate to solve complex business problems.
+📖 **Detailed architecture and design decisions are available in the [`docs/`](docs/) directory.**
 
-By separating responsibilities across specialized agents, DataPilot demonstrates how **Agentic AI** can be applied to modern data platforms to create intelligent, context-aware decision support systems.
+---
+
+# 🎯 Design Principles
+
+DataPilot was built around five core engineering principles.
+
+### 🧩 Modularity
+
+Every component is independently developed and maintained.
+
+### 📈 Scalability
+
+The architecture supports additional data sources, AI agents, dashboards, and analytical models.
+
+### 🔄 Extensibility
+
+New capabilities can be integrated without affecting existing modules.
+
+### 🛡️ Reliability
+
+Data quality checks, workflow orchestration, and structured logging ensure robust execution.
+
+### 🤖 Intelligence
+
+A planner-driven multi-agent framework enables context-aware analytics instead of isolated AI responses.
+
+---
 
 # 🚀 Getting Started
 
-Follow the steps below to set up and run **DataPilot** on your local machine.
+Get **DataPilot** up and running in just a few steps.
 
 ---
 
-## 📋 Prerequisites
+# 📋 Prerequisites
 
-Ensure the following software is installed before you begin.
+Ensure the following software is installed before running the project.
 
 | Software | Version |
 |----------|---------|
@@ -672,15 +523,11 @@ Ensure the following software is installed before you begin.
 | Docker Compose | Latest |
 | Git | Latest |
 
-It is also recommended to have:
-
-- PostgreSQL Client (Optional)
-- pgAdmin (Included through Docker)
-- Visual Studio Code
-
 ---
 
-# 📥 Clone the Repository
+# ⚡ Quick Start
+
+### 1️⃣ Clone the Repository
 
 ```bash
 git clone https://github.com/<your-username>/DataPilot.git
@@ -690,7 +537,7 @@ cd DataPilot
 
 ---
 
-# 🐍 Create a Virtual Environment
+### 2️⃣ Create a Virtual Environment
 
 Windows
 
@@ -710,7 +557,7 @@ source .venv/bin/activate
 
 ---
 
-# 📦 Install Dependencies
+### 3️⃣ Install Dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -718,764 +565,318 @@ pip install -r requirements.txt
 
 ---
 
-# ⚙️ Environment Configuration
+### 4️⃣ Configure Environment Variables
 
 Create a `.env` file in the project root.
 
 ```env
-POSTGRES_HOST=postgres
+POSTGRES_HOST=
 
-POSTGRES_PORT=5432
+POSTGRES_PORT=
 
-POSTGRES_DB=agentic_db
+POSTGRES_DB=
 
-POSTGRES_USER=postgres
+POSTGRES_USER=
 
-POSTGRES_PASSWORD=your_password
+POSTGRES_PASSWORD=
 
-PGADMIN_DEFAULT_EMAIL=admin@example.com
+PGADMIN_DEFAULT_EMAIL=
 
-PGADMIN_DEFAULT_PASSWORD=your_password
+PGADMIN_DEFAULT_PASSWORD=
 
-AIRFLOW_UID=50000
+AIRFLOW_UID=
 
-GEMINI_API_KEY=your_api_key
+GEMINI_API_KEY=
 ```
 
 ---
 
-# 🐳 Start the Platform
-
-Launch all services using Docker Compose.
+### 5️⃣ Start the Infrastructure
 
 ```bash
 docker compose up -d
 ```
 
-Verify that all containers are running.
+This starts:
 
-```bash
-docker ps
-```
-
-Expected services include:
-
-- PostgreSQL
-- pgAdmin
-- Apache Airflow Scheduler
-- Apache Airflow Webserver
+- 🐘 PostgreSQL
+- 🌪️ Apache Airflow
+- 🖥️ pgAdmin
 
 ---
 
-# 🗄️ Initialize the Data Warehouse
-
-Run the warehouse initialization pipeline.
+### 6️⃣ Build the Warehouse
 
 ```bash
 python warehouse/pipeline.py
 ```
 
-This step creates the required schemas, tables, and warehouse objects.
-
 ---
 
-# 📥 Run Data Ingestion
-
-Execute the ingestion pipeline.
+### 7️⃣ Run Data Ingestion
 
 ```bash
 python ingestion/pipeline.py
 ```
 
-This loads raw data into the Bronze layer.
-
 ---
 
-# 🔄 Execute dbt Models
-
-Navigate to the dbt project.
+### 8️⃣ Execute dbt Models
 
 ```bash
 cd dbt_project
-```
 
-Run transformations.
-
-```bash
 dbt run
-```
 
-Execute data quality tests.
-
-```bash
 dbt test
 ```
 
 ---
 
-# 🧠 Build the Knowledge Base
-
-Generate embeddings and create the FAISS vector index.
+### 9️⃣ Build the Knowledge Base
 
 ```bash
 python -m agents.rag.build_index
 ```
 
-This step only needs to be executed when project documentation changes.
-
 ---
 
-# 📊 Launch the Dashboard
-
-Start the Streamlit application.
+### 🔟 Launch the Dashboard
 
 ```bash
 streamlit run app/Home.py
 ```
 
-The dashboard will be available at:
+Open:
 
 ```
 http://localhost:8501
 ```
 
----
-
-# 🌪️ Airflow
-
-Open Airflow:
-
-```
-http://localhost:8080
-```
-
-Login using your configured Airflow credentials.
-
-From the Airflow UI you can:
-
-- Trigger pipelines
-- Monitor DAG executions
-- View task logs
-- Retry failed tasks
+🎉 You're ready to explore DataPilot!
 
 ---
-
-# 🐘 pgAdmin
-
-Open pgAdmin:
-
-```
-http://localhost:5050
-```
-
-Use the credentials defined in your `.env` file.
-
-You can inspect:
-
-- Bronze Layer
-- Silver Layer
-- Gold Layer
-- dbt Models
-- Warehouse Tables
-
----
-
-# ✅ Verify Installation
-
-If everything has been configured correctly, you should be able to:
-
-- Successfully start all Docker containers.
-- Execute the Airflow DAG.
-- Run dbt models and tests.
-- Access the PostgreSQL warehouse.
-- Open the Streamlit dashboard.
-- Interact with the AI Assistant.
-- Generate SQL queries using natural language.
-- View analytics dashboards.
-
-Congratulations! 🎉 DataPilot is now ready for use.
 
 # 🤖 AI Assistant
 
-One of DataPilot's most distinctive capabilities is its **Agentic AI Assistant**, designed to make interacting with data as simple as having a conversation.
+DataPilot includes a planner-driven **Multi-Agent AI Assistant** that enables users to interact with the platform using natural language.
 
-Instead of manually writing SQL queries, navigating dashboards, or investigating pipeline failures, users can ask questions in natural language. DataPilot intelligently understands the request, routes it to the appropriate AI agent, retrieves the required information, and returns meaningful, context-aware responses.
-
-The assistant is powered by a **multi-agent orchestration framework**, where specialized AI agents collaborate to perform complex analytical tasks while sharing a common execution context.
+Instead of writing SQL or manually navigating dashboards, simply ask questions such as:
 
 ---
-
-## 🧠 AI Capabilities
-
-The AI Assistant can:
-
-- 💻 Convert natural language into optimized PostgreSQL queries.
-- 📊 Analyze business data and generate actionable insights.
-- 📈 Identify trends, patterns, and anomalies.
-- 📚 Answer project-related questions using Retrieval-Augmented Generation (RAG).
-- ⚙️ Monitor Apache Airflow, dbt, and pipeline health.
-- 📄 Generate executive-level business reports.
-- 🔄 Dynamically orchestrate multiple AI agents to solve complex requests.
-
----
-
-## 🤖 Available AI Agents
-
-| Agent | Responsibility |
-|--------|---------------|
-| 🧠 Planner | Understands user intent and determines the execution strategy. |
-| 💻 SQL Agent | Generates and executes PostgreSQL queries. |
-| 📊 Analytics Agent | Produces business insights and recommendations. |
-| 📚 Knowledge Agent | Retrieves contextual information from the project knowledge base. |
-| ⚙️ Pipeline Agent | Monitors pipeline execution and platform health. |
-| 📄 Report Agent | Generates executive reports and business summaries. |
-
----
-
-# 💬 Example Interactions
 
 ### 📊 Business Analytics
 
-**User**
-
 > Show the top 10 customers by revenue.
 
-**DataPilot**
+✔ Generates SQL
 
-- Generates an optimized SQL query.
-- Retrieves the required data.
-- Identifies the highest-value customers.
-- Highlights key observations.
-- Displays the result as a table.
+✔ Executes query
+
+✔ Returns results
+
+✔ Provides business insights
 
 ---
 
 ### 📈 Trend Analysis
 
-**User**
+> What are the monthly revenue trends?
 
-> What are the monthly sales trends?
+✔ Retrieves historical data
 
-**DataPilot**
+✔ Identifies growth patterns
 
-- Queries historical sales data.
-- Calculates month-over-month growth.
-- Detects seasonal patterns.
-- Provides business recommendations.
+✔ Highlights anomalies
 
----
-
-### 📦 Product Performance
-
-**User**
-
-> Which product category generated the highest revenue?
-
-**DataPilot**
-
-- Executes analytical SQL.
-- Ranks product categories.
-- Calculates contribution percentages.
-- Summarizes findings.
+✔ Suggests recommendations
 
 ---
 
-### 📚 Project Knowledge
+### 📚 Knowledge Retrieval
 
-**User**
+> Explain the Medallion Architecture.
 
-> Explain the Medallion Architecture used in this project.
+✔ Searches the project knowledge base
 
-**DataPilot**
+✔ Retrieves relevant documentation
 
-- Retrieves relevant project documentation.
-- Uses Retrieval-Augmented Generation (RAG).
-- Produces an accurate, project-specific explanation.
+✔ Generates context-aware explanations using RAG
 
 ---
 
 ### ⚙️ Pipeline Monitoring
 
-**User**
+> Is my Airflow pipeline healthy?
 
-> Is my data pipeline healthy?
+✔ Checks Airflow
 
-**DataPilot**
+✔ Reviews dbt status
 
-- Checks Apache Airflow.
-- Reviews dbt execution status.
-- Identifies pipeline issues.
-- Suggests corrective actions when required.
+✔ Reports pipeline health
+
+✔ Highlights failures
 
 ---
 
 ### 📄 Executive Reporting
 
-**User**
+> Generate a quarterly business report.
 
-> Generate an executive sales report for this month.
+✔ Performs analytics
 
-**DataPilot**
+✔ Summarizes KPIs
 
-- Retrieves the required business metrics.
-- Performs analytical reasoning.
-- Generates a structured executive report containing:
-
-- Executive Summary
-- Key KPIs
-- Business Insights
-- Recommendations
-- Conclusion
+✔ Generates executive-ready reports
 
 ---
 
-# 🔄 Multi-Agent Execution
+# 💬 Example Queries
 
-Simple requests are handled by a single agent.
-
-Complex requests trigger collaboration between multiple agents.
-
-For example,
-
-> Generate an executive report showing the top-performing customers.
-
-The execution flow becomes:
+### SQL
 
 ```text
-User Request
-      │
-      ▼
-Planner
-      │
-      ▼
-SQL Agent
-      │
-      ▼
-PostgreSQL
-      │
-      ▼
-Analytics Agent
-      │
-      ▼
-Report Agent
-      │
-      ▼
-Final Executive Report
+Show the top 10 customers by revenue.
 ```
 
-This collaborative architecture enables DataPilot to solve complex analytical tasks while keeping each AI agent focused on a single responsibility.
+```text
+List sellers from São Paulo.
+```
 
 ---
 
-# 🚀 Why It Matters
+### Analytics
 
-Traditional analytics platforms require users to:
+```text
+Which product category generated the highest sales?
+```
 
-- Navigate multiple dashboards.
-- Write SQL queries.
-- Understand database schemas.
-- Monitor pipeline health manually.
-- Interpret raw analytical results.
+```text
+Show monthly sales trends.
+```
 
-DataPilot removes these barriers by allowing users to interact with the platform using natural language.
+---
 
-Instead of asking **how to retrieve the data**, users can simply ask **what they want to know**.
+### Knowledge
 
-This significantly improves accessibility for both technical and non-technical users while demonstrating how Agentic AI can enhance modern data platforms.
+```text
+Explain the Medallion Architecture.
+```
+
+```text
+How does the SQL Agent work?
+```
+
+---
+
+### Pipeline
+
+```text
+Is Airflow running?
+```
+
+```text
+Did dbt tests pass?
+```
+
+---
+
+### Reports
+
+```text
+Generate an executive sales report.
+```
+
+```text
+Summarize this month's business performance.
+```
+
+---
 
 # 📸 Platform Showcase
 
-DataPilot provides an integrated experience that combines interactive dashboards, modern data engineering pipelines, and an AI-powered analytics assistant into a single platform.
+Below are some of the key modules available in DataPilot.
 
-The screenshots below highlight the major capabilities of the platform.
+| Module | Preview |
+|---------|---------|
+| 🏠 Home | `assets/screenshots/home.png` |
+| 📊 Executive Dashboard | `assets/screenshots/executive-dashboard.png` |
+| 💰 Sales Analytics | `assets/screenshots/sales-dashboard.png` |
+| 👥 Customer Analytics | `assets/screenshots/customer-dashboard.png` |
+| 📦 Product Analytics | `assets/screenshots/product-dashboard.png` |
+| 🛍️ Seller Analytics | `assets/screenshots/seller-dashboard.png` |
+| 🌦️ Weather Analytics | `assets/screenshots/weather-dashboard.png` |
+| 🤖 AI Assistant | `assets/screenshots/ai-assistant.png` |
+| ⚙️ Pipeline Monitoring | `assets/screenshots/pipeline-monitoring.png` |
 
----
-
-## 🏠 Home Dashboard
-
-The home dashboard provides a centralized entry point to the platform, offering quick navigation, platform overview, key metrics, and access to every analytical module.
-
-<p align="center">
-<img src="assets/screenshots/home.png" width="95%">
-</p>
-
----
-
-## 📊 Executive Dashboard
-
-A high-level business intelligence dashboard designed for decision-makers.
-
-Features include:
-
-- Executive KPIs
-- Revenue Overview
-- Sales Trends
-- Business Growth
-- Performance Indicators
-
-<p align="center">
-<img src="assets/screenshots/executive-dashboard.png" width="95%">
-</p>
+> 💡 *Replace the placeholders above with actual screenshots after capturing the application.*
 
 ---
 
-## 💰 Sales Analytics
+# 📚 Documentation
 
-Analyze business performance through detailed sales insights.
+Detailed documentation is available in the **docs/** directory.
 
-Highlights:
-
-- Monthly Revenue
-- Top Products
-- Regional Performance
-- Order Trends
-- Revenue Distribution
-
-<p align="center">
-<img src="assets/screenshots/sales-dashboard.png" width="95%">
-</p>
+| Guide | Description |
+|--------|-------------|
+| 📖 Architecture Guide | System architecture and design |
+| 🤖 AI Framework | Multi-agent architecture |
+| 🥉 Medallion Architecture | Warehouse design |
+| ⚙️ Pipeline Guide | ETL workflow |
+| 🛠️ Engineering Decisions | Technology choices |
+| 🚀 Deployment Guide | Production deployment |
 
 ---
 
-## 👥 Customer Analytics
+# ❓ Frequently Asked Questions
 
-Understand customer behavior using interactive visualizations.
+### Why PostgreSQL instead of MySQL?
 
-Includes:
-
-- Customer Segmentation
-- Customer Lifetime Value
-- Top Customers
-- Purchase Behavior
-- Customer Distribution
-
-<p align="center">
-<img src="assets/screenshots/customer-dashboard.png" width="95%">
-</p>
+PostgreSQL provides advanced SQL capabilities, better analytical performance, and excellent compatibility with dbt and Airflow.
 
 ---
 
-## 📦 Product Analytics
+### Why use dbt?
 
-Gain deeper visibility into product performance.
-
-Includes:
-
-- Best Selling Products
-- Category Performance
-- Product Revenue
-- Inventory Insights
-
-<p align="center">
-<img src="assets/screenshots/product-dashboard.png" width="95%">
-</p>
+dbt enables modular SQL transformations, automated testing, documentation, and analytics engineering best practices.
 
 ---
 
-## 🛍️ Seller Analytics
+### Why a Multi-Agent AI framework?
 
-Evaluate seller performance across multiple business dimensions.
-
-Includes:
-
-- Top Sellers
-- Seller Revenue
-- Regional Performance
-- Sales Distribution
-
-<p align="center">
-<img src="assets/screenshots/seller-dashboard.png" width="95%">
-</p>
+Specialized agents improve scalability, maintainability, and allow complex analytical tasks to be solved collaboratively instead of relying on a single LLM.
 
 ---
 
-## 🌦️ Weather Analytics
+### Can DataPilot be deployed to the cloud?
 
-Explore the relationship between external weather conditions and business performance.
-
-Includes:
-
-- Weather Trends
-- Temperature Analysis
-- Seasonal Insights
-- Weather Impact
-
-<p align="center">
-<img src="assets/screenshots/weather-dashboard.png" width="95%">
-</p>
+Yes. The platform is designed with cloud deployment in mind and can be extended to AWS, Azure, or Google Cloud with minimal architectural changes.
 
 ---
 
-## ✅ Data Quality Dashboard
+# 🗺️ Roadmap
 
-Monitor warehouse quality using dbt validation results.
+DataPilot has been developed incrementally, with each milestone introducing new capabilities while maintaining a modular and scalable architecture.
 
-Features:
+## ✅ Completed
 
-- Schema Tests
-- Integrity Checks
-- Missing Values
-- Duplicate Detection
-- Quality KPIs
+### 🏗️ Platform Foundation
 
-<p align="center">
-<img src="assets/screenshots/data-quality.png" width="95%">
-</p>
-
----
-
-# 🤖 AI Assistant
-
-The AI Assistant enables users to interact with the platform using natural language.
-
-Capabilities include:
-
-- Natural Language → SQL
-- Business Analytics
-- Pipeline Monitoring
-- Knowledge Retrieval
-- Executive Reporting
-
-<p align="center">
-<img src="assets/screenshots/ai-assistant.png" width="95%">
-</p>
-
----
-
-## ⚙️ Pipeline Monitoring
-
-Monitor the health of the entire Modern Data Stack.
-
-The assistant can inspect:
-
-- Apache Airflow
-- dbt Models
-- Data Pipeline Status
-- Warehouse Health
-- Service Availability
-
-<p align="center">
-<img src="assets/screenshots/pipeline-monitoring.png" width="95%">
-</p>
-
----
-
-# 🎥 Demo
-
-A complete walkthrough of DataPilot is available below.
-
-> 📹 Demo Video *(Coming Soon)*
-
-or
-
-> 🎬 Watch the Demo: *(Add YouTube link here)*
-
-```
-https://youtu.be/your-demo-video
-```
-
----
-
-# 📈 Project Highlights
-
-✔️ Modern Data Stack
-
-✔️ Medallion Architecture
-
-✔️ Apache Airflow
-
-✔️ dbt Core
-
-✔️ PostgreSQL Warehouse
-
-✔️ Streamlit Dashboards
-
-✔️ Multi-Agent AI Framework
-
-✔️ Natural Language to SQL
-
-✔️ Retrieval-Augmented Generation (RAG)
-
-✔️ Pipeline Monitoring
-
-✔️ Executive Report Generation
-
-✔️ Dockerized Infrastructure
-
-# 🏗️ Engineering Decisions
-
-Building DataPilot involved selecting technologies and architectural patterns that reflect modern data engineering best practices. Rather than choosing tools based solely on popularity, each component was selected to solve a specific problem while ensuring scalability, maintainability, and extensibility.
-
----
-
-## Why PostgreSQL?
-
-PostgreSQL was selected as the analytical data warehouse because it offers a robust SQL engine, excellent performance, strong ACID compliance, and extensive support for analytical workloads.
-
-It also integrates seamlessly with dbt, SQLAlchemy, Airflow, and Streamlit, making it an ideal choice for a modern analytics platform.
-
----
-
-## Why Apache Airflow?
-
-Scheduling data pipelines using shell scripts or cron jobs quickly becomes difficult to maintain as workflows grow.
-
-Apache Airflow provides:
-
-- Workflow orchestration
-- Task dependency management
-- Automatic retries
-- Monitoring
-- Logging
-- Scheduling
-- Extensibility
-
-This makes the pipeline significantly more reliable and production-ready.
-
----
-
-## Why dbt?
-
-Instead of embedding transformation logic inside Python scripts or SQL files, DataPilot uses dbt to manage analytical transformations.
-
-Benefits include:
-
-- Modular SQL models
-- Version-controlled transformations
-- Automated testing
-- Documentation generation
-- Dependency management
-- Incremental model support
-
-This follows modern Analytics Engineering best practices.
-
----
-
-## Why the Medallion Architecture?
-
-Rather than storing all data in a single schema, DataPilot follows the Medallion Architecture.
-
-This layered approach separates raw, cleaned, and business-ready datasets into independent stages.
-
-### Bronze
-
-Stores raw ingested data exactly as received.
-
-### Silver
-
-Cleans, validates, standardizes, and enriches the data.
-
-### Gold
-
-Contains business-ready datasets optimized for dashboards, reporting, and AI applications.
-
-This design improves maintainability while preserving historical data for auditing and reproducibility.
-
----
-
-## Why a Multi-Agent AI Framework?
-
-Most AI-powered analytics applications rely on a single LLM to answer every user request.
-
-DataPilot instead adopts a specialized **multi-agent architecture**, where each agent focuses on a single responsibility.
-
-This provides several advantages:
-
-- Better separation of concerns
-- Easier maintenance
-- Higher scalability
-- Improved extensibility
-- Independent testing of each agent
-- Clear execution flow
-
-Rather than one large agent handling everything, DataPilot allows multiple agents to collaborate through a shared execution context.
-
----
-
-## Why Retrieval-Augmented Generation (RAG)?
-
-Large Language Models are powerful, but they do not inherently understand project-specific documentation or implementation details.
-
-To address this, DataPilot incorporates Retrieval-Augmented Generation (RAG).
-
-Project documentation is indexed into a FAISS vector database, allowing the Knowledge Agent to retrieve relevant context before generating a response.
-
-This improves:
-
-- Accuracy
-- Context-awareness
-- Reliability
-- Explainability
-
-while reducing hallucinations.
-
----
-
-## Why Streamlit?
-
-Instead of building a traditional frontend using React or Angular, Streamlit was chosen because it enables rapid development of interactive analytical applications using Python.
-
-This allows the entire platform—including dashboards, AI assistant, and business intelligence modules—to be developed within a unified technology stack.
-
----
-
-## Why Docker?
-
-Modern data platforms consist of multiple interconnected services.
-
-Docker ensures every component—including PostgreSQL, Apache Airflow, pgAdmin, and supporting services—runs within isolated, reproducible environments.
-
-This eliminates dependency conflicts and simplifies deployment across different operating systems.
-
----
-
-## Why This Architecture?
-
-The overall architecture was designed around three core principles:
-
-### 📦 Modularity
-
-Every major component—ingestion, warehouse, transformation, dashboards, and AI—is developed independently.
-
----
-
-### 📈 Scalability
-
-New data sources, dashboards, AI agents, and analytical models can be added without modifying existing components.
-
----
-
-### 🔄 Extensibility
-
-The platform is designed so that future technologies, cloud deployments, or additional AI agents can be integrated with minimal changes.
-
----
-
-By combining these architectural decisions, DataPilot demonstrates how modern data engineering principles and Agentic AI can work together to build intelligent, scalable, and production-inspired analytics platforms.
-
-# 🗺️ Project Roadmap
-
-DataPilot was developed incrementally, with each milestone introducing a new capability while maintaining a modular and scalable architecture.
-
-## ✅ Completed Milestones
-
-### 🏗️ Foundation & Infrastructure
-
-- [x] Project Architecture & Planning
+- [x] Project Architecture
+- [x] Modular Codebase
 - [x] Dockerized Development Environment
-- [x] PostgreSQL Data Warehouse
-- [x] Environment Configuration
-- [x] Modular Project Structure
+- [x] Configuration Management
+- [x] Logging Framework
 
 ---
 
 ### 📥 Data Engineering
 
-- [x] Automated Data Ingestion Pipelines
+- [x] Automated Data Ingestion
+- [x] PostgreSQL Data Warehouse
+- [x] Medallion Architecture
+- [x] Incremental Data Processing
 - [x] Weather API Integration
-- [x] Warehouse Initialization
-- [x] Data Validation
-- [x] Logging Framework
 
 ---
 
@@ -1484,20 +885,16 @@ DataPilot was developed incrementally, with each milestone introducing a new cap
 - [x] Apache Airflow Integration
 - [x] Automated DAG Execution
 - [x] Task Dependency Management
-- [x] Retry & Failure Handling
 - [x] Pipeline Monitoring
 
 ---
 
 ### 🔷 Analytics Engineering
 
-- [x] Medallion Architecture
-- [x] Bronze Layer
-- [x] Silver Layer
-- [x] Gold Layer
 - [x] dbt Models
 - [x] dbt Tests
 - [x] Data Quality Validation
+- [x] Analytics-ready Gold Layer
 
 ---
 
@@ -1513,102 +910,69 @@ DataPilot was developed incrementally, with each milestone introducing a new cap
 
 ---
 
-### 🤖 Agentic AI Framework
+### 🤖 Agentic AI
 
-- [x] Agent Orchestrator
-- [x] Shared Agent Context
-- [x] Planner
-- [x] Tool Registry
+- [x] Planner Agent
 - [x] SQL Agent
 - [x] Analytics Agent
 - [x] Knowledge Agent (RAG)
 - [x] Pipeline Agent
 - [x] Report Agent
-- [x] Google Gemini Integration
+- [x] Dynamic Agent Routing
+- [x] Shared Execution Context
 
 ---
 
-### 📚 Retrieval-Augmented Generation
+## 🚀 Next Milestones
 
-- [x] Document Loader
-- [x] Text Chunking
-- [x] Embedding Generation
-- [x] FAISS Vector Store
-- [x] Semantic Retrieval
-- [x] Knowledge Assistant
+The platform has been designed for future expansion. Planned enhancements include:
 
----
-
-### 🚀 Platform Integration
-
-- [x] AI Assistant
-- [x] Dashboard Integration
-- [x] Multi-Agent Execution
-- [x] End-to-End Analytics Workflow
-
----
-
-# 🔮 Future Enhancements
-
-DataPilot has been designed with extensibility in mind. The following enhancements are planned for future iterations.
-
-### ☁️ Cloud & Deployment
+### ☁️ Cloud & DevOps
 
 - [ ] AWS Deployment
 - [ ] Azure Deployment
 - [ ] Google Cloud Deployment
 - [ ] Kubernetes
-- [ ] Terraform Infrastructure
+- [ ] CI/CD Pipeline
+- [ ] Infrastructure as Code (Terraform)
 
 ---
 
-### ⚡ Data Engineering
+### ⚡ Streaming & Real-Time Analytics
 
-- [ ] Kafka Streaming
-- [ ] Real-Time Data Pipelines
-- [ ] CDC (Change Data Capture)
-- [ ] Delta Lake Support
-- [ ] Iceberg Support
+- [ ] Apache Kafka
+- [ ] Change Data Capture (CDC)
+- [ ] Real-Time Dashboards
+- [ ] Event-Driven Pipelines
 
 ---
 
-### 🤖 AI
+### 🤖 Advanced AI
 
 - [ ] Multi-LLM Support
 - [ ] Local LLM Integration
-- [ ] AI Memory
+- [ ] Conversational Memory
 - [ ] Autonomous Pipeline Optimization
-- [ ] Conversational Analytics
-- [ ] Chart Generation from Natural Language
+- [ ] AI-generated Dashboards
+- [ ] Natural Language Chart Generation
 
 ---
 
-### 📊 Analytics
+### 📈 Advanced Analytics
 
-- [ ] Predictive Analytics
-- [ ] Demand Forecasting
+- [ ] Sales Forecasting
 - [ ] Customer Churn Prediction
+- [ ] Demand Forecasting
 - [ ] Recommendation Engine
 - [ ] Anomaly Detection
 
 ---
 
-### 🔒 Enterprise Features
+# 🎯 Long-Term Vision
 
-- [ ] Authentication & Authorization
-- [ ] Role-Based Access Control
-- [ ] Audit Logging
-- [ ] API Gateway
-- [ ] CI/CD Pipeline
-- [ ] Observability & Monitoring
+DataPilot began as a project to explore modern data engineering practices but evolved into a broader vision: building an **AI-native analytics platform** where intelligent agents work alongside modern data infrastructure to simplify decision-making.
 
----
-
-## 🎯 Long-Term Vision
-
-The long-term vision for **DataPilot** is to evolve from a production-inspired learning project into a comprehensive **AI-native Data Platform** capable of managing the complete data lifecycle—from ingestion and orchestration to intelligent analytics and autonomous decision support.
-
-By combining modern data engineering principles with Agentic AI, DataPilot aims to demonstrate how future data platforms can move beyond traditional dashboards and become intelligent systems that actively assist users in understanding, analyzing, and acting on their data.
+The long-term objective is to transform DataPilot into a comprehensive platform capable of managing the entire data lifecycle—from ingestion and orchestration to intelligent analytics, automated reporting, and autonomous decision support.
 
 ---
 
@@ -1616,91 +980,108 @@ By combining modern data engineering principles with Agentic AI, DataPilot aims 
 
 Contributions are always welcome!
 
-Whether you want to improve the platform, fix bugs, enhance documentation, or introduce new features, your contributions are greatly appreciated.
+Whether you want to improve the platform, add new AI agents, optimize pipelines, enhance dashboards, or improve documentation, your contributions are appreciated.
 
-### How to Contribute
+### Getting Started
 
 1. Fork the repository.
 2. Create a new feature branch.
 
 ```bash
-git checkout -b feature/your-feature-name
+git checkout -b feature/awesome-feature
 ```
 
 3. Commit your changes.
 
 ```bash
-git commit -m "feat: add amazing feature"
+git commit -m "feat: add awesome feature"
 ```
 
-4. Push the branch.
+4. Push to your branch.
 
 ```bash
-git push origin feature/your-feature-name
+git push origin feature/awesome-feature
 ```
 
 5. Open a Pull Request.
 
-Please ensure your code follows the existing project structure and coding conventions.
+Please ensure that your code follows the existing project structure and coding conventions.
 
 ---
 
-# 🏆 Project Highlights
+# 📊 Project Statistics
 
-DataPilot demonstrates practical implementation of modern data engineering and AI concepts, including:
+| Metric | Value |
+|---------|------:|
+| Programming Language | Python |
+| Architecture | Medallion |
+| Database | PostgreSQL |
+| Workflow Engine | Apache Airflow |
+| Transformation Tool | dbt |
+| Dashboard Framework | Streamlit |
+| AI Framework | Multi-Agent |
+| Vector Store | FAISS |
+| Containerization | Docker |
 
-- Modern Data Stack Architecture
-- Medallion Data Warehouse Design
-- Apache Airflow Workflow Orchestration
-- Analytics Engineering using dbt
-- PostgreSQL Data Warehouse
-- Interactive Business Intelligence Dashboards
-- Multi-Agent AI Framework
-- Natural Language to SQL
-- Retrieval-Augmented Generation (RAG)
-- AI-powered Pipeline Monitoring
-- Executive Report Generation
-- Dockerized Deployment
+> 💡 *You can enhance this section later with GitHub Actions badges, code coverage, repository statistics, and automated metrics.*
 
 ---
 
-# 📚 What You'll Learn
+# 🌟 Key Takeaways
 
-DataPilot is intended as a practical learning resource for developers interested in:
+DataPilot demonstrates practical implementation of:
 
-- Data Engineering
+- Modern Data Engineering
 - Analytics Engineering
-- Data Warehousing
 - Workflow Orchestration
-- Modern Data Stack
+- Data Warehousing
 - Business Intelligence
 - Agentic AI
 - Retrieval-Augmented Generation (RAG)
-- LLM-powered Applications
+- Natural Language to SQL
+- AI-powered Business Analytics
 - Production-inspired System Design
 
 ---
 
-# 👨‍💻 About the Author
+# 👨‍💻 Author
 
-**Dheeraj Yadav**
+<div align="center">
 
-B.Tech Computer Science & Engineering  
-Indian Institute of Information Technology (IIIT) Bhagalpur
+## Dheeraj Yadav
 
-I'm passionate about building scalable data platforms that combine modern data engineering with artificial intelligence to solve real-world business problems. My interests include Data Engineering, Analytics Engineering, MLOps, Agentic AI, and Intelligent Decision Support Systems.
+**B.Tech Computer Science & Engineering**  
+**Indian Institute of Information Technology (IIIT) Bhagalpur**
 
-### Connect with Me
+*Aspiring Data Engineer | Analytics Engineer | AI Engineer*
 
-- 💼 LinkedIn: https://www.linkedin.com/in/dheerajyadav1/
-- 💻 GitHub: https://github.com/Dheerajyadav1
-- 📧 Email: your-email@example.com
+</div>
+
+I enjoy building scalable data platforms that combine modern data engineering with artificial intelligence to solve real-world business problems. My interests include Data Engineering, Analytics Engineering, MLOps, Agentic AI, and Intelligent Decision Support Systems.
+
+### 📬 Connect with Me
+
+<p align="left">
+
+<a href="https://github.com/Dheerajyadav1">
+<img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github"/>
+</a>
+
+<a href="https://www.linkedin.com/in/dheerajyadav1/">
+<img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin"/>
+</a>
+
+<a href="mailto:your-email@example.com">
+<img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail"/>
+</a>
+
+</p>
 
 ---
 
 # 🙏 Acknowledgements
 
-This project would not have been possible without the incredible open-source community.
+DataPilot builds upon the incredible work of the open-source community.
 
 Special thanks to the teams behind:
 
@@ -1716,7 +1097,7 @@ Special thanks to the teams behind:
 - Pandas
 - NumPy
 
-Their contributions continue to shape the modern data engineering ecosystem.
+Their tools and communities continue to advance the field of modern data engineering.
 
 ---
 
@@ -1724,23 +1105,27 @@ Their contributions continue to shape the modern data engineering ecosystem.
 
 This project is licensed under the **MIT License**.
 
-You are free to use, modify, and distribute this project in accordance with the terms of the license.
+Feel free to use, modify, and distribute this project in accordance with the license terms.
 
 ---
 
 <div align="center">
 
-## ⭐ Support the Project
+# ⭐ Support DataPilot
 
-If you found **DataPilot** useful or learned something from it, consider giving the repository a **star**.
+If you found this project useful, informative, or inspiring, consider giving it a ⭐ on GitHub.
 
-Your support motivates future improvements and helps the project reach more developers.
+Your support motivates continued development and helps others discover the project.
+
+---
 
 ### 🚀 DataPilot
 
 **Intelligent Data Engineering & Analytics Platform**
 
 *From Raw Data to Intelligent Decisions.*
+
+*"Building the future of analytics—one intelligent pipeline at a time."*
 
 Made with ❤️ by **Dheeraj Yadav**
 
