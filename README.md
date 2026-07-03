@@ -354,31 +354,39 @@ Each agent is responsible for a specialized task while sharing a common executio
 ```mermaid
 flowchart TD
 
-User
+    A[👤 User]
 
-↓
+    B[🧠 Planner]
 
-Planner
+    C[💻 SQL Agent]
 
-↓
+    D[📊 Analytics Agent]
 
-SQL Agent
+    E[📚 Knowledge Agent]
 
-Analytics Agent
+    F[⚙️ Pipeline Agent]
 
-Knowledge Agent
+    G[📄 Report Agent]
 
-Pipeline Agent
+    H[(Shared Context)]
 
-Report Agent
+    I[✨ Final Response]
 
-↓
+    A --> B
 
-Shared Context
+    B --> C
+    B --> D
+    B --> E
+    B --> F
+    B --> G
 
-↓
+    C --> H
+    D --> H
+    E --> H
+    F --> H
+    G --> H
 
-Final Response
+    H --> I
 ```
 
 ---
