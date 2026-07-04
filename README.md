@@ -594,54 +594,42 @@ PGADMIN_DEFAULT_PASSWORD=
 
 AIRFLOW_UID=
 
+AIRFLOW_USER=
+
+AIRFLOW_PASSWORD=
+
 GEMINI_API_KEY=
 ```
 
 ---
 
-### 5️⃣ Start the Infrastructure
+### 5️⃣ Start the Platform (Docker Compose)
 
 ```bash
-docker compose up -d
+docker compose up -d --build
 ```
 
-This starts:
+This starts the complete containerized stack:
 
-- 🐘 PostgreSQL
-- 🌪️ Apache Airflow
-- 🖥️ pgAdmin
+* 🐘 **PostgreSQL** (Port `5432` - Warehouse database)
+* 🌪️ **Apache Airflow** (Port `8080` - Orchestrates the ingestion, warehouse, and dbt pipeline)
+* 📊 **Streamlit Dashboard** (Port `8501` - Visual analytics app & AI Assistant)
+* 🖥️ **pgAdmin** (Port `5050` - Database management UI)
 
 ---
 
-### 6️⃣ Build the Warehouse
+### 6️⃣ Run the Data Pipeline
 
-```bash
-python warehouse/pipeline.py
-```
-
----
-
-### 7️⃣ Run Data Ingestion
-
-```bash
-python ingestion/pipeline.py
-```
+1. Open the Airflow Webserver at **[http://localhost:8080](http://localhost:8080)**.
+2. Log in using your configured credentials (default: `admin` / `admin`).
+3. Find the `datapilot_platform` DAG, unpause it, and trigger execution.
+4. Airflow will run the pipeline: Ingestion Pipeline → Warehouse Pipeline → dbt Run → dbt Test.
 
 ---
 
-### 8️⃣ Execute dbt Models
+### 7️⃣ Build the Knowledge Base
 
-```bash
-cd dbt_project
-
-dbt run
-
-dbt test
-```
-
----
-
-### 9️⃣ Build the Knowledge Base
+Inside your virtual environment, build the semantic search index for the RAG Knowledge Agent:
 
 ```bash
 python -m agents.rag.build_index
@@ -649,16 +637,17 @@ python -m agents.rag.build_index
 
 ---
 
-### 🔟 Launch the Dashboard
+### 8️⃣ Launch the Dashboard
 
-```bash
-streamlit run app/Home.py
-```
-
-Open:
+The dashboard is **already running** inside the Docker container! Simply open:
 
 ```
 http://localhost:8501
+```
+
+*(Optional Local Run)*: If you want to run Streamlit on your host machine instead of Docker, run:
+```bash
+streamlit run app/Home.py
 ```
 
 🎉 You're ready to explore DataPilot!

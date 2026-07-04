@@ -171,6 +171,11 @@ class WeatherLoader:
         dataframe: pd.DataFrame,
     ):
 
+        if self.config.settings["load"]["if_exists"] == "replace":
+            from sqlalchemy import text
+            with self.engine.begin() as connection:
+                connection.execute(text(f"DROP TABLE IF EXISTS raw.weather CASCADE"))
+
         dataframe.to_sql(
             name="weather",
             schema="raw",

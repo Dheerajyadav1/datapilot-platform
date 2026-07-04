@@ -18,7 +18,7 @@ SELECT
 
     op.payment_type,
 
-    op.payment_value,
+    COALESCE(op.payment_value, 0.0) AS payment_value,
 
     r.review_score
 

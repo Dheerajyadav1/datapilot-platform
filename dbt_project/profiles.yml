@@ -5,10 +5,10 @@ datapilot_platform:
 
     dev:
       type: postgres
-      host: postgres
-      port: 5432
-      user: postgres
-      password: postgres
-      dbname: agentic_db
+      host: "{{ env_var('POSTGRES_HOST', 'localhost') }}"
+      port: "{{ env_var('POSTGRES_PORT', '5432') | as_number }}"
+      user: "{{ env_var('POSTGRES_USER', 'postgres') }}"
+      password: "{{ env_var('POSTGRES_PASSWORD', 'postgres') }}"
+      dbname: "{{ env_var('POSTGRES_DB', 'agentic_db') }}"
       schema: gold
       threads: 4

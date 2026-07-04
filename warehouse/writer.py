@@ -36,6 +36,11 @@ class DatabaseWriter:
             f"to {schema}.{table}"
         )
 
+        if self.config.settings["load"]["if_exists"] == "replace":
+            from sqlalchemy import text
+            with self.engine.begin() as connection:
+                connection.execute(text(f"DROP TABLE IF EXISTS {schema}.{table} CASCADE"))
+
         dataframe.to_sql(
             name=table,
             schema=schema,

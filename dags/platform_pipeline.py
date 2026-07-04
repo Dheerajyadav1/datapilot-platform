@@ -22,6 +22,7 @@ with DAG(
     start_date=datetime(2026, 6, 1),
     schedule="@hourly",
     catchup=False,
+    max_active_runs=1,
     default_args=default_args,
     tags=[
         "platform",
