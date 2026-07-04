@@ -796,17 +796,15 @@ Below are some of the key modules available in DataPilot.
 
 | Module | Preview |
 |---------|---------|
-| 🏠 Home | `assets/screenshots/home.png` |
-| 📊 Executive Dashboard | `assets/screenshots/executive-dashboard.png` |
-| 💰 Sales Analytics | `assets/screenshots/sales-dashboard.png` |
-| 👥 Customer Analytics | `assets/screenshots/customer-dashboard.png` |
-| 📦 Product Analytics | `assets/screenshots/product-dashboard.png` |
-| 🛍️ Seller Analytics | `assets/screenshots/seller-dashboard.png` |
-| 🌦️ Weather Analytics | `assets/screenshots/weather-dashboard.png` |
-| 🤖 AI Assistant | `assets/screenshots/ai-assistant.png` |
-| ⚙️ Pipeline Monitoring | `assets/screenshots/pipeline-monitoring.png` |
-
-> 💡 *Replace the placeholders above with actual screenshots after capturing the application.*
+| Home | ![Home](assets/screenshots/home.png) |
+| Executive Dashboard | ![Executive Dashboard](assets/screenshots/executive-dashboard.png) |
+| Sales Analytics | ![Sales Analytics](assets/screenshots/sales-dashboard.png) |
+| Customer Analytics | ![Customer Analytics](assets/screenshots/customer-dashboard.png) |
+| Product Analytics | ![Product Analytics](assets/screenshots/product-dashboard.png) |
+| Seller Analytics | ![Seller Analytics](assets/screenshots/seller-dashboard.png) |
+| Weather Analytics | ![Weather Analytics](assets/screenshots/weather-dashboard.png) |
+| AI Assistant | ![AI Assistant](assets/screenshots/ai-assistant.png) |
+| Pipeline Monitoring | ![Pipeline Monitoring](assets/screenshots/pipeline-monitoring.png) |
 
 ---
 
@@ -816,12 +814,12 @@ Detailed documentation is available in the **docs/** directory.
 
 | Guide | Description |
 |--------|-------------|
-| 📖 Architecture Guide | System architecture and design |
-| 🤖 AI Framework | Multi-agent architecture |
-| 🥉 Medallion Architecture | Warehouse design |
-| ⚙️ Pipeline Guide | ETL workflow |
-| 🛠️ Engineering Decisions | Technology choices |
-| 🚀 Deployment Guide | Production deployment |
+| Architecture Guide | System architecture and design |
+| AI Framework | Multi-agent architecture |
+| Medallion Architecture | Warehouse design |
+| Pipeline Guide | ETL workflow |
+| Engineering Decisions | Technology choices |
+| Deployment Guide | Production deployment |
 
 ---
 
