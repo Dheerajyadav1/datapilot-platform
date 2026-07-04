@@ -22,7 +22,7 @@ Sidebar.render()
 
 service = ProductService()
 
-st.title("📦 Product Analytics")
+st.title("Product Analytics")
 st.caption("Analyze product performance and categories.")
 st.divider()
 
@@ -39,12 +39,12 @@ with st.spinner("Loading Product analytics data..."):
         left, right = st.columns(2)
         with left:
             MetricCard.show(
-                "📦 Products",
+                "Products",
                 Formatter.integer(total_products)
             )
         with right:
             MetricCard.show(
-                "💳 Average Price",
+                "Average Price",
                 Formatter.currency(avg_price)
             )
 

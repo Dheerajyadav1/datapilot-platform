@@ -20,7 +20,7 @@ Sidebar.render()
 
 service = WeatherService()
 
-st.title("🌦️ Weather Analytics")
+st.title("Weather Analytics")
 st.caption("Latest environmental observations from data ingestion pipelines.")
 st.divider()
 

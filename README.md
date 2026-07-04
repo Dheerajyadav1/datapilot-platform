@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🚀 DataPilot
+# DataPilot
 
 ### Intelligent Data Engineering & Analytics Platform
 
@@ -29,13 +29,13 @@
 ![Status](https://img.shields.io/badge/Status-Active-success)
 ![License](https://img.shields.io/badge/License-MIT-blue)
 ![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen)
-![Made With Love](https://img.shields.io/badge/Made%20With-❤️-red)
+![Made With Love](https://img.shields.io/badge/Made%20With-Love-red)
 
 </div>
 
 ---
 
-## 📌 Table of Contents
+## Table of Contents
 
 - [Overview](#-overview)
 - [Why DataPilot](#-why-datapilot)
@@ -45,7 +45,7 @@
 
 ---
 
-# 📖 Overview
+# Overview
 
 Modern organizations rely on data to drive business decisions, yet building a complete analytics platform often requires combining multiple technologies for ingestion, orchestration, transformation, warehousing, visualization, and intelligence.
 
@@ -59,7 +59,7 @@ The platform demonstrates how modern **Data Engineering**, **Analytics Engineeri
 
 ---
 
-# 💡 Why DataPilot?
+# Why DataPilot?
 
 Most analytics projects stop after building dashboards.
 
@@ -83,9 +83,9 @@ This combination of modern data engineering and autonomous AI makes DataPilot mo
 
 ---
 
-# ✨ Key Features
+# Key Features
 
-### 🏗️ Modern Data Engineering
+### Modern Data Engineering
 
 - Automated Data Ingestion Pipelines
 - Medallion Architecture (Bronze → Silver → Gold)
@@ -97,7 +97,7 @@ This combination of modern data engineering and autonomous AI makes DataPilot mo
 
 ---
 
-### 📊 Business Intelligence
+### Business Intelligence
 
 - Executive Dashboard
 - Sales Analytics
@@ -109,7 +109,7 @@ This combination of modern data engineering and autonomous AI makes DataPilot mo
 
 ---
 
-### 🤖 Agentic AI
+### Agentic AI
 
 - Multi-Agent Orchestration
 - Natural Language to SQL
@@ -122,7 +122,7 @@ This combination of modern data engineering and autonomous AI makes DataPilot mo
 
 ---
 
-### ⚙️ Platform Capabilities
+### Platform Capabilities
 
 - End-to-End Data Pipeline
 - AI-Powered Analytics
@@ -135,7 +135,7 @@ This combination of modern data engineering and autonomous AI makes DataPilot mo
 
 ---
 
-# 🛠️ Technology Stack
+# Technology Stack
 
 | Category | Technologies |
 |-----------|--------------|
@@ -153,14 +153,14 @@ This combination of modern data engineering and autonomous AI makes DataPilot mo
 
 ---
 
-# 🚀 Project Highlights
+# Project Highlights
 
 <table>
 <tr>
 
 <td align="center" width="25%">
 
-### 🏗️
+###
 
 **Modern Data Stack**
 
@@ -170,7 +170,7 @@ Production-inspired architecture using Airflow, dbt, PostgreSQL, and Docker.
 
 <td align="center" width="25%">
 
-### 🤖
+###
 
 **Agentic AI**
 
@@ -180,7 +180,7 @@ A multi-agent framework capable of SQL generation, analytics, RAG, reporting, an
 
 <td align="center" width="25%">
 
-### 📊
+###
 
 **Business Intelligence**
 
@@ -190,7 +190,7 @@ Interactive dashboards delivering actionable insights across multiple business d
 
 <td align="center" width="25%">
 
-### 🚀
+###
 
 **Scalable Design**
 
@@ -203,13 +203,13 @@ Modular architecture designed for extensibility, maintainability, and future clo
 
 ---
 
-# 🏛️ Architecture & Engineering
+# Architecture & Engineering
 
 DataPilot is designed as a modular, production-inspired data platform where every layer has a single responsibility. The platform separates data ingestion, transformation, analytics, visualization, and AI into independent components, making it scalable, maintainable, and easy to extend.
 
 ---
 
-# 🏗️ High-Level System Architecture
+# High-Level System Architecture
 
 ```mermaid
 flowchart LR
@@ -274,7 +274,7 @@ P --> H
 
 ---
 
-# ⚙️ Data Pipeline
+# Data Pipeline
 
 Every dataset follows a structured journey before becoming available for analytics and AI.
 
@@ -314,7 +314,7 @@ A[Raw Data]
 
 ---
 
-# 🥉 Medallion Architecture
+# Medallion Architecture
 
 DataPilot follows the **Bronze → Silver → Gold** architecture to progressively improve data quality.
 
@@ -345,7 +345,7 @@ This layered design improves maintainability, enables reproducibility, and prese
 
 ---
 
-# 🤖 Multi-Agent AI Architecture
+# Multi-Agent AI Architecture
 
 Unlike traditional AI applications that rely on a single LLM, DataPilot uses a **Planner-based Multi-Agent Architecture**.
 
@@ -404,7 +404,7 @@ flowchart TD
 
 ---
 
-# 🔄 Request Lifecycle
+# Request Lifecycle
 
 Every user request follows a structured execution pipeline.
 
@@ -436,7 +436,7 @@ This orchestration layer allows multiple AI agents to collaborate while remainin
 
 ---
 
-# 📂 Project Structure
+# Project Structure
 
 ```text
 DataPilot/
@@ -470,7 +470,7 @@ DataPilot/
 
 ---
 
-# ⚡ Engineering Decisions
+# Engineering Decisions
 
 Building DataPilot involved selecting technologies based on scalability, maintainability, and production best practices.
 
@@ -488,39 +488,39 @@ Building DataPilot involved selecting technologies based on scalability, maintai
 
 ---
 
-# 🎯 Design Principles
+# Design Principles
 
 DataPilot was built around five core engineering principles.
 
-### 🧩 Modularity
+### Modularity
 
 Every component is independently developed and maintained.
 
-### 📈 Scalability
+### Scalability
 
 The architecture supports additional data sources, AI agents, dashboards, and analytical models.
 
-### 🔄 Extensibility
+### Extensibility
 
 New capabilities can be integrated without affecting existing modules.
 
-### 🛡️ Reliability
+### Reliability
 
 Data quality checks, workflow orchestration, and structured logging ensure robust execution.
 
-### 🤖 Intelligence
+### Intelligence
 
 A planner-driven multi-agent framework enables context-aware analytics instead of isolated AI responses.
 
 ---
 
-# 🚀 Getting Started
+# Getting Started
 
 Get **DataPilot** up and running in just a few steps.
 
 ---
 
-# 📋 Prerequisites
+# Prerequisites
 
 Ensure the following software is installed before running the project.
 
@@ -533,9 +533,9 @@ Ensure the following software is installed before running the project.
 
 ---
 
-# ⚡ Quick Start
+# Quick Start
 
-### 1️⃣ Clone the Repository
+### Clone the Repository
 
 ```bash
 git clone https://github.com/<your-username>/DataPilot.git
@@ -545,7 +545,7 @@ cd DataPilot
 
 ---
 
-### 2️⃣ Create a Virtual Environment
+### Create a Virtual Environment
 
 Windows
 
@@ -565,7 +565,7 @@ source .venv/bin/activate
 
 ---
 
-### 3️⃣ Install Dependencies
+### Install Dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -573,7 +573,7 @@ pip install -r requirements.txt
 
 ---
 
-### 4️⃣ Configure Environment Variables
+### Configure Environment Variables
 
 Create a `.env` file in the project root.
 
@@ -603,7 +603,7 @@ GEMINI_API_KEY=
 
 ---
 
-### 5️⃣ Start the Platform (Docker Compose)
+### Start the Platform (Docker Compose)
 
 ```bash
 docker compose up -d --build
@@ -618,7 +618,7 @@ This starts the complete containerized stack:
 
 ---
 
-### 6️⃣ Run the Data Pipeline
+### Run the Data Pipeline
 
 1. Open the Airflow Webserver at **[http://localhost:8080](http://localhost:8080)**.
 2. Log in using your configured credentials (default: `admin` / `admin`).
@@ -627,7 +627,7 @@ This starts the complete containerized stack:
 
 ---
 
-### 7️⃣ Build the Knowledge Base
+### Build the Knowledge Base
 
 Inside your virtual environment, build the semantic search index for the RAG Knowledge Agent:
 
@@ -637,7 +637,7 @@ python -m agents.rag.build_index
 
 ---
 
-### 8️⃣ Launch the Dashboard
+### Launch the Dashboard
 
 The dashboard is **already running** inside the Docker container! Simply open:
 
@@ -654,7 +654,7 @@ streamlit run app/Home.py
 
 ---
 
-# 🤖 AI Assistant
+# AI Assistant
 
 DataPilot includes a planner-driven **Multi-Agent AI Assistant** that enables users to interact with the platform using natural language.
 
@@ -662,7 +662,7 @@ Instead of writing SQL or manually navigating dashboards, simply ask questions s
 
 ---
 
-### 📊 Business Analytics
+### Business Analytics
 
 > Show the top 10 customers by revenue.
 
@@ -676,7 +676,7 @@ Instead of writing SQL or manually navigating dashboards, simply ask questions s
 
 ---
 
-### 📈 Trend Analysis
+### Trend Analysis
 
 > What are the monthly revenue trends?
 
@@ -690,7 +690,7 @@ Instead of writing SQL or manually navigating dashboards, simply ask questions s
 
 ---
 
-### 📚 Knowledge Retrieval
+### Knowledge Retrieval
 
 > Explain the Medallion Architecture.
 
@@ -702,7 +702,7 @@ Instead of writing SQL or manually navigating dashboards, simply ask questions s
 
 ---
 
-### ⚙️ Pipeline Monitoring
+### Pipeline Monitoring
 
 > Is my Airflow pipeline healthy?
 
@@ -716,7 +716,7 @@ Instead of writing SQL or manually navigating dashboards, simply ask questions s
 
 ---
 
-### 📄 Executive Reporting
+### Executive Reporting
 
 > Generate a quarterly business report.
 
@@ -728,7 +728,7 @@ Instead of writing SQL or manually navigating dashboards, simply ask questions s
 
 ---
 
-# 💬 Example Queries
+# Example Queries
 
 ### SQL
 
@@ -790,7 +790,7 @@ Summarize this month's business performance.
 
 ---
 
-# 📸 Platform Showcase
+# Platform Showcase
 
 Below are some of the key modules available in DataPilot.
 
@@ -810,7 +810,7 @@ Below are some of the key modules available in DataPilot.
 
 ---
 
-# 📚 Documentation
+# Documentation
 
 Detailed documentation is available in the **docs/** directory.
 
@@ -825,7 +825,7 @@ Detailed documentation is available in the **docs/** directory.
 
 ---
 
-# ❓ Frequently Asked Questions
+# Frequently Asked Questions
 
 ### Why PostgreSQL instead of MySQL?
 
@@ -851,13 +851,13 @@ Yes. The platform is designed with cloud deployment in mind and can be extended 
 
 ---
 
-# 🗺️ Roadmap
+# Roadmap
 
 DataPilot has been developed incrementally, with each milestone introducing new capabilities while maintaining a modular and scalable architecture.
 
-## ✅ Completed
+## Completed
 
-### 🏗️ Platform Foundation
+### Platform Foundation
 
 - [x] Project Architecture
 - [x] Modular Codebase
@@ -867,7 +867,7 @@ DataPilot has been developed incrementally, with each milestone introducing new 
 
 ---
 
-### 📥 Data Engineering
+### Data Engineering
 
 - [x] Automated Data Ingestion
 - [x] PostgreSQL Data Warehouse
@@ -877,7 +877,7 @@ DataPilot has been developed incrementally, with each milestone introducing new 
 
 ---
 
-### 🌪️ Workflow Orchestration
+### Workflow Orchestration
 
 - [x] Apache Airflow Integration
 - [x] Automated DAG Execution
@@ -886,7 +886,7 @@ DataPilot has been developed incrementally, with each milestone introducing new 
 
 ---
 
-### 🔷 Analytics Engineering
+### Analytics Engineering
 
 - [x] dbt Models
 - [x] dbt Tests
@@ -895,7 +895,7 @@ DataPilot has been developed incrementally, with each milestone introducing new 
 
 ---
 
-### 📊 Business Intelligence
+### Business Intelligence
 
 - [x] Executive Dashboard
 - [x] Sales Analytics
@@ -907,7 +907,7 @@ DataPilot has been developed incrementally, with each milestone introducing new 
 
 ---
 
-### 🤖 Agentic AI
+### Agentic AI
 
 - [x] Planner Agent
 - [x] SQL Agent
@@ -920,11 +920,11 @@ DataPilot has been developed incrementally, with each milestone introducing new 
 
 ---
 
-## 🚀 Next Milestones
+## Next Milestones
 
 The platform has been designed for future expansion. Planned enhancements include:
 
-### ☁️ Cloud & DevOps
+### Cloud & DevOps
 
 - [ ] AWS Deployment
 - [ ] Azure Deployment
@@ -935,7 +935,7 @@ The platform has been designed for future expansion. Planned enhancements includ
 
 ---
 
-### ⚡ Streaming & Real-Time Analytics
+### Streaming & Real-Time Analytics
 
 - [ ] Apache Kafka
 - [ ] Change Data Capture (CDC)
@@ -944,7 +944,7 @@ The platform has been designed for future expansion. Planned enhancements includ
 
 ---
 
-### 🤖 Advanced AI
+### Advanced AI
 
 - [ ] Multi-LLM Support
 - [ ] Local LLM Integration
@@ -955,7 +955,7 @@ The platform has been designed for future expansion. Planned enhancements includ
 
 ---
 
-### 📈 Advanced Analytics
+### Advanced Analytics
 
 - [ ] Sales Forecasting
 - [ ] Customer Churn Prediction
@@ -965,7 +965,7 @@ The platform has been designed for future expansion. Planned enhancements includ
 
 ---
 
-# 🎯 Long-Term Vision
+# Long-Term Vision
 
 DataPilot began as a project to explore modern data engineering practices but evolved into a broader vision: building an **AI-native analytics platform** where intelligent agents work alongside modern data infrastructure to simplify decision-making.
 
@@ -973,7 +973,7 @@ The long-term objective is to transform DataPilot into a comprehensive platform 
 
 ---
 
-# 🤝 Contributing
+# Contributing
 
 Contributions are always welcome!
 
@@ -1006,7 +1006,7 @@ Please ensure that your code follows the existing project structure and coding c
 
 ---
 
-# 📊 Project Statistics
+# Project Statistics
 
 | Metric | Value |
 |---------|------:|
@@ -1024,7 +1024,7 @@ Please ensure that your code follows the existing project structure and coding c
 
 ---
 
-# 🌟 Key Takeaways
+# Key Takeaways
 
 DataPilot demonstrates practical implementation of:
 
@@ -1041,7 +1041,7 @@ DataPilot demonstrates practical implementation of:
 
 ---
 
-# 👨‍💻 Author
+# Author
 
 <div align="center">
 
@@ -1056,7 +1056,7 @@ DataPilot demonstrates practical implementation of:
 
 I enjoy building scalable data platforms that combine modern data engineering with artificial intelligence to solve real-world business problems. My interests include Data Engineering, Analytics Engineering, MLOps, Agentic AI, and Intelligent Decision Support Systems.
 
-### 📬 Connect with Me
+### Connect with Me
 
 <p align="left">
 
@@ -1076,7 +1076,7 @@ I enjoy building scalable data platforms that combine modern data engineering wi
 
 ---
 
-# 🙏 Acknowledgements
+# Acknowledgements
 
 DataPilot builds upon the incredible work of the open-source community.
 
@@ -1098,7 +1098,7 @@ Their tools and communities continue to advance the field of modern data enginee
 
 ---
 
-# 📄 License
+# License
 
 This project is licensed under the **MIT License**.
 
@@ -1108,7 +1108,7 @@ Feel free to use, modify, and distribute this project in accordance with the lic
 
 <div align="center">
 
-# ⭐ Support DataPilot
+# Support DataPilot
 
 If you found this project useful, informative, or inspiring, consider giving it a ⭐ on GitHub.
 
@@ -1116,7 +1116,7 @@ Your support motivates continued development and helps others discover the proje
 
 ---
 
-### 🚀 DataPilot
+### DataPilot
 
 **Intelligent Data Engineering & Analytics Platform**
 

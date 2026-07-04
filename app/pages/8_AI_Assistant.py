@@ -25,7 +25,7 @@ st.set_page_config(
 load_css()
 Sidebar.render()
 
-render_header("🤖 AI Data Assistant", "Ask questions about your data warehouse, pipeline health, business trends, or platform architecture.")
+render_header("AI Data Assistant", "Ask questions about your data warehouse, pipeline health, business trends, or platform architecture.")
 st.divider()
 
 if "messages" not in st.session_state:

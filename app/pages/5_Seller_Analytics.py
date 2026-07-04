@@ -21,7 +21,7 @@ Sidebar.render()
 
 service = SellerService()
 
-st.title("🏪 Seller Analytics")
+st.title("Seller Analytics")
 st.caption("Seller performance and revenue distributions.")
 st.divider()
 
@@ -35,7 +35,7 @@ with st.spinner("Loading Seller analytics data..."):
         seller_orders_df = service.seller_orders()
 
         MetricCard.show(
-            "🏪 Total Sellers",
+            "Total Sellers",
             Formatter.integer(total_sellers)
         )
 

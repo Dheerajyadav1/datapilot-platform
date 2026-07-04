@@ -26,12 +26,12 @@ Sidebar.render()
 service = DashboardService()
 
 # Title and Header Card
-render_header("🚀 DataPilot", "AI-Powered End-to-End Data Engineering Platform")
+render_header("DataPilot", "AI-Powered End-to-End Data Engineering Platform")
 st.divider()
 
 # Project Overview Card
 st.markdown("""
-### 📝 Project Overview
+### Project Overview
 
 The **DataPilot** is an end-to-end modern data engineering solution that ingests raw data, transforms it through Bronze, Silver, and Gold layers, orchestrates workflows with Apache Airflow, models data using dbt, and presents interactive analytics through Streamlit.
 
@@ -56,82 +56,82 @@ with st.spinner("Loading metrics..."):
         sellers = 0
 
 # KPIs Section with Icons
-st.subheader("💰 Key Performance Indicators")
+st.subheader("Key Performance Indicators")
 col1, col2, col3, col4, col5 = st.columns(5)
 
 with col1:
     MetricCard.show(
-        "💰 Revenue",
+        "Revenue",
         Formatter.currency(revenue),
     )
 
 with col2:
     MetricCard.show(
-        "🛒 Orders",
+        "Orders",
         Formatter.integer(orders),
     )
 
 with col3:
     MetricCard.show(
-        "👥 Customers",
+        "Customers",
         Formatter.integer(customers),
     )
 
 with col4:
     MetricCard.show(
-        "📦 Products",
+        "Products",
         Formatter.integer(products),
     )
 
 with col5:
     MetricCard.show(
-        "🏪 Sellers",
+        "Sellers",
         Formatter.integer(sellers),
     )
 
 st.divider()
 
 # Business Insights Section
-st.subheader("🧠 Automatic Business Insights")
+st.subheader("Business Insights")
 insight_col1, insight_col2 = st.columns(2)
 
 with insight_col1:
     st.success(
-        "📈 **Revenue Highlight**: The overall e-commerce transactions have reached a historical total of "
+        "**Revenue Highlight**: The overall e-commerce transactions have reached a historical total of "
         f"**{Formatter.currency(revenue)}**, driven primarily by high-density urban buyer centers."
     )
     st.info(
-        "🏆 **Top Performer state**: State **SP** (São Paulo) stands as the highest revenue generating state "
+        "**Top Performer state**: State **SP** (São Paulo) stands as the highest revenue generating state "
         "and largest customer acquisition hub in the dataset."
     )
 
 with insight_col2:
     st.warning(
-        "⚠️ **Auditing Alert**: 3 sales records inside the `gold.fact_sales` layer have missing payment values. "
+        "**Auditing Alert**: 3 sales records inside the `gold.fact_sales` layer have missing payment values. "
         "This triggers an alert in our daily dbt data quality checks to ensure source integrity."
     )
     st.success(
-        "🏎️ **Cache Active**: All dashboard queries are cached locally for 600 seconds (10 mins) using Streamlit cache memory, "
+        "**Cache Active**: All dashboard queries are cached locally for 600 seconds (10 mins) using Streamlit cache memory, "
         "protecting PostgreSQL connection pool limits."
     )
 
 st.divider()
 
 # Technology Stack Section
-st.subheader("🛠️ Technology Stack")
+st.subheader("Technology Stack")
 tech_col1, tech_col2, tech_col3, tech_col4 = st.columns(4)
 
 with tech_col1:
     st.markdown(
         """
-        **🐍 Python**
+        **Python**
         - ETL workflows
         - Weather APIs Ingestion
         """
     )
     st.markdown(
         """
-        **🐘 PostgreSQL**
+        **PostgreSQL**
         - Data Warehouse
         - Bronze/Silver/Gold
         """
@@ -140,14 +140,14 @@ with tech_col1:
 with tech_col2:
     st.markdown(
         """
-        **🐳 Docker**
+        **Docker**
         - Container Orchestration
         - Sandbox isolation
         """
     )
     st.markdown(
         """
-        **🌬️ Airflow**
+        **Airflow**
         - Directed Acyclic Graphs
         - Schedule triggers
         """
@@ -156,14 +156,14 @@ with tech_col2:
 with tech_col3:
     st.markdown(
         """
-        **📊 dbt (data build tool)**
+        **dbt (data build tool)**
         - SQL transformations
         - Constraints testing
         """
     )
     st.markdown(
         """
-        **📈 Plotly**
+        **Plotly**
         - Clean visual charts
         - Responsive layout
         """
@@ -172,14 +172,14 @@ with tech_col3:
 with tech_col4:
     st.markdown(
         """
-        **🎈 Streamlit**
+        **Streamlit**
         - User-facing UI
         - Reactive widgets
         """
     )
     st.markdown(
         """
-        **⛓️ SQLAlchemy**
+        **SQLAlchemy**
         - Database connection
         - Object relational mapping
         """
@@ -188,7 +188,7 @@ with tech_col4:
 st.divider()
 
 # Platform Engineering & Performance Metrics Card
-st.subheader("⚙️ Data Platform Performance Metrics")
+st.subheader("Data Platform Performance Metrics")
 perf_col1, perf_col2, perf_col3 = st.columns(3)
 
 with perf_col1:
@@ -206,7 +206,7 @@ with perf_col3:
 st.divider()
 
 # Recent Revenue Trend Section
-st.subheader("📈 Recent Revenue Trend")
+st.subheader("Recent Revenue Trend")
 with st.spinner("Loading sales trend..."):
     try:
         monthly = service.get_monthly_revenue()

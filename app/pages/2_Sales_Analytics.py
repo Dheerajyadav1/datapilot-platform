@@ -19,7 +19,7 @@ Sidebar.render()
 
 service = SalesService()
 
-st.title("💰 Sales Analytics")
+st.title("Sales Analytics")
 st.caption("Detailed sales performance analysis.")
 st.divider()
 

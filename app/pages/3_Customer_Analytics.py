@@ -22,7 +22,7 @@ Sidebar.render()
 
 service = CustomerService()
 
-st.title("👥 Customer Analytics")
+st.title("Customer Analytics")
 st.caption("Customer acquisition and geographic analysis.")
 st.divider()
 
@@ -36,7 +36,7 @@ with st.spinner("Loading Customer analytics data..."):
         customers_by_city_df = service.customers_by_city()
 
         MetricCard.show(
-            "👥 Total Customers",
+            "Total Customers",
             Formatter.integer(total_customers)
         )
 

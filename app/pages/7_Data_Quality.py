@@ -19,8 +19,8 @@ Sidebar.render()
 
 service = QualityService()
 
-st.title("✅ Data Quality Dashboard")
-st.success("Pipeline Health : HEALTHY")
+st.title("Data Quality Dashboard")
+st.success("Pipeline Health: HEALTHY")
 st.divider()
 
 # Wrapped in spinner and try-except error boundary

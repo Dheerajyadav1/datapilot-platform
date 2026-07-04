@@ -22,7 +22,7 @@ Sidebar.render()
 
 service = DashboardService()
 
-render_header("📊 Executive Dashboard", "High-level overview of the business.")
+render_header("Executive Dashboard", "High-level overview of the business.")
 st.divider()
 
 # Wrapped in spinner and try-except error boundary
@@ -43,17 +43,17 @@ with st.spinner("Loading Executive dashboard data..."):
         # Render KPI Section
         col1, col2, col3 = st.columns(3)
         with col1:
-            MetricCard.show("💰 Revenue", Formatter.currency(revenue))
+            MetricCard.show("Revenue", Formatter.currency(revenue))
         with col2:
-            MetricCard.show("🛒 Orders", Formatter.integer(orders))
+            MetricCard.show("Orders", Formatter.integer(orders))
         with col3:
-            MetricCard.show("💳 Average Order Value", Formatter.currency(aov))
+            MetricCard.show("Average Order Value", Formatter.currency(aov))
 
         col4, col5 = st.columns(2)
         with col4:
-            MetricCard.show("👥 Customers", Formatter.integer(customers))
+            MetricCard.show("Customers", Formatter.integer(customers))
         with col5:
-            MetricCard.show("🏪 Sellers", Formatter.integer(sellers))
+            MetricCard.show("Sellers", Formatter.integer(sellers))
 
         st.divider()
 
