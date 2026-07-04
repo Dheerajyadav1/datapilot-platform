@@ -18,7 +18,7 @@ from app.utils.helpers import load_css, render_header
 
 st.set_page_config(
     page_title="AI Assistant",
-    page_icon="🤖",
+    page_icon=None,
     layout="wide",
 )
 

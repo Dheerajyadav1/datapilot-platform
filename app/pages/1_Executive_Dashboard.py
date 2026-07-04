@@ -12,7 +12,7 @@ from app.utils.formatting import Formatter
 
 st.set_page_config(
     page_title="Executive Dashboard",
-    page_icon="📊",
+    page_icon=None,
     layout="wide",
 )
 

@@ -11,7 +11,7 @@ from app.utils.formatting import Formatter
 
 st.set_page_config(
     page_title="Seller Analytics",
-    page_icon="🏪",
+    page_icon=None,
     layout="wide",
 )
 

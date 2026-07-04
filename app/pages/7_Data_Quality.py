@@ -9,7 +9,7 @@ from app.utils.helpers import load_css
 
 st.set_page_config(
     page_title="Data Quality",
-    page_icon="✅",
+    page_icon=None,
     layout="wide",
 )
 

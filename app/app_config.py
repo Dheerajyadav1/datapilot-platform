@@ -11,7 +11,7 @@ class AppConfig:
 
         self.page_title = "DataPilot"
 
-        self.page_icon = "🚀"
+        self.page_icon = None
 
         self.layout = "wide"
 
